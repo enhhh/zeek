@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "AI/AStar.h"
 
 #define ZEEK_GID 2
 
@@ -86,6 +87,7 @@ bool GameScene::loadGameMap(const std::string &fileName)
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,m_gameMap);
     
     parseGameMap(m_gameMap->getLayer("hazard"));
+    PathFind::getInstance()->AStarSearch(m_gameMap,2,10,11,4);
     return true;
 }
 

@@ -14,6 +14,24 @@ class GameScene
 : public Scene
 {
 public:
+    enum tiledGid
+    {
+        tiledGid_begin,
+        tiledGid_zeed,
+        tiledGid_apple,
+        tiledGid_ball,
+        tiledGid_openEater,
+        tiledGid_closeEater,
+        tiledGid_key,
+        tiledGid_door,
+        tiledGid_healthyFlower,
+        tiledGid_healthyMushroom,
+        tiledGid_electrode,
+        tiledGid_poisonousMushroom,
+        tiledGid_chest,
+        tiledGid_bomb
+    };
+    
     static GameScene*create();
     
     bool loadGameMap(const std::string& fileName);

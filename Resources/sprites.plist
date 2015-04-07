@@ -186,19 +186,6 @@
 			<key>sourceSize</key>
 			<string>{36,36}</string>
 		</dict>
-		<key>cylinder3.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{670,252},{36,36}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{36,36}}</string>
-			<key>sourceSize</key>
-			<string>{36,36}</string>
-		</dict>
 		<key>dinosaur_east1.png</key>
 		<dict>
 			<key>frame</key>
