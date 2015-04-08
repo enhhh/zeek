@@ -10,6 +10,12 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\object">
+      <UniqueIdentifier>{b0c12c0f-ba1c-479e-8f2e-f689409422e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ai">
+      <UniqueIdentifier>{9960a6e9-255f-4895-b5f7-b9d83ddd2eef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -18,8 +24,20 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\object\Zeek.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AI\AStar.cpp">
+      <Filter>src\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\object\Eater.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\object\Flower.cpp">
+      <Filter>src\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,8 +47,23 @@
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\preInclude.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\object\Zeek.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AI\AStar.h">
+      <Filter>src\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\object\Eater.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\object\Flower.h">
+      <Filter>src\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
