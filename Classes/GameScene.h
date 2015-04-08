@@ -10,27 +10,12 @@
 #define __zeek__GameScene__
 #include "preInclude.h"
 #include "object/Zeek.h"
+#include "object/GameObjectMgr.h"
 class GameScene
 : public Scene
 {
 public:
-    enum tiledGid
-    {
-        tiledGid_begin,
-        tiledGid_zeed,
-        tiledGid_apple,
-        tiledGid_ball,
-        tiledGid_openEater,
-        tiledGid_closeEater,
-        tiledGid_key,
-        tiledGid_door,
-        tiledGid_healthyFlower,
-        tiledGid_healthyMushroom,
-        tiledGid_electrode,
-        tiledGid_poisonousMushroom,
-        tiledGid_chest,
-        tiledGid_bomb
-    };
+
     
     static GameScene*create();
     
@@ -51,11 +36,18 @@ protected:
     
     void onMapTouchEnd(Touch*touch,Event*event);
     
+    const GameObjectMgr& getGameObjectMgr()
+    {
+        return m_gameObjectMgr;
+    }
+    
 protected:
     TMXTiledMap*    m_gameMap;
     TMXLayer*       m_objectLayer;
     
     Zeek*       m_zeek;
+    
+    GameObjectMgr m_gameObjectMgr;
     
 };
 

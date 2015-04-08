@@ -14,10 +14,8 @@ Zeek * Zeek::create(Vec2 coordinate)
 {
     auto ptr = new Zeek();
     
-    if(ptr && ptr->init())
+    if(ptr && ptr->init(tiledGid_zeed,nullptr,coordinate))
     {
-        ptr->m_Coordinate = coordinate;
-        ptr->autorelease();
         return ptr;
     }
     
@@ -26,11 +24,8 @@ Zeek * Zeek::create(Vec2 coordinate)
 }
 
 
-bool Zeek::init()
+bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
 {
-    if(!cocos2d::Sprite::init())
-        return false;
-    
     //从缓存中读动画.
     Animation* zeekPoisonAni = AnimationCache::getInstance()->getAnimation("zeek_rest");
     auto ani = Animate::create(zeekPoisonAni);
@@ -38,12 +33,22 @@ bool Zeek::init()
     m_zeekAni[ZeekState::poison] = ani;
     
     SpriteFrame* frame = SpriteFrameCache::getInstance()->getSpriteFrameByName("zeek_rest1.png");
-    this->setDisplayFrame(frame);
-    this->runAction(RepeatForever::create(ani));
+    if(!bodySprite)
+        m_bodySprite = Sprite::createWithSpriteFrame(frame);
+    else
+        m_bodySprite->setDisplayFrame(frame);
+    m_bodySprite->runAction(RepeatForever::create(ani));
     return true;
 }
 
-void Zeek::walkToPosition(Vec2 tmxCoord)
+void Zeek::moveTo(Zeek::moveDir dir)
 {
-    auto moveTo = MoveTo::create(3, tmxCoord);
+    switch (dir) {
+        case moveDir_East:
+            
+            break;
+            
+        default:
+            break;
+    }
 }

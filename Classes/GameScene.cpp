@@ -106,10 +106,10 @@ bool GameScene::parseGameMap(cocos2d::TMXLayer *objectLayer)
                 if(!m_zeek)
                 {
                     m_zeek = Zeek::create(Vec2(i,j));
-                    this->addChild(m_zeek);
+                    this->addChild(m_zeek->m_bodySprite);
                 }
                 auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i,j)));
-                m_zeek->setPosition(pos);
+                m_zeek->m_bodySprite->setPosition(pos);
             }
             
         }
@@ -141,7 +141,6 @@ void GameScene::onMapTouchEnd(cocos2d::Touch *touch, cocos2d::Event *event)
     Vec2 locationInNode = m_gameMap->convertToNodeSpace(touch->getLocation());
     int x = locationInNode.x / m_gameMap->getTileSize().width;
     int y = locationInNode.y / m_gameMap->getTileSize().height;
-    m_zeek->walkToPosition(Vect(x,y));
 }
 
 

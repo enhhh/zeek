@@ -10,9 +10,10 @@
 #define __zeek__Zeek__
 
 #include "preInclude.h"
+#include "GameObject.h"
 
 class Zeek
-: public Sprite
+: public GameObject
 {
     enum ZeekState
     {
@@ -24,21 +25,28 @@ class Zeek
         rest
     };
     
+    enum moveDir
+    {
+        moveDir_West,
+        moveDir_East,
+        moveDir_North,
+        moveDir_South
+    };
+    
+    
     
 public:
-    static Zeek * create(Vec2 );
+    static Zeek * create(Vec2 coordinate);
     
-    void walkToPosition(Vec2 tmxCoord);
+    void moveTo(moveDir dir);
     
     void death();
     
 protected:
-    virtual bool init() override;
+    virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
     
 protected:
     std::map<ZeekState,Animate*> m_zeekAni;
-    
-    Vect    m_Coordinate;
     
 };
 
