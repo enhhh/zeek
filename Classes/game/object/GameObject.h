@@ -12,6 +12,7 @@
 #include "preInclude.h"
 
 class GameObject
+:public Node
 {
 public:
     GameObject();

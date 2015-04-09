@@ -9,6 +9,8 @@
 #ifndef zeek_dataStruct_h
 #define zeek_dataStruct_h
 
+
+#define GAME_MAP_OBJECT_LAYER "hazard"
 enum tiledGid
 {
     tiledGid_begin,

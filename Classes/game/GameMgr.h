@@ -11,8 +11,8 @@
 
 #include "preInclude.h"
 #include "object/GameObject.h"
-#include "object/Zeek.h"
 
+class Zeek;
 class GameMgr
 {
 public:
@@ -40,6 +40,10 @@ public:
     bool removeGameObjectFromMap(GameObject *obj);
     
     bool removeGameObjectFromMap(Vec2 coord);
+    
+    //地图相关
+    
+    Vec2 getPositionWithCoord(Vec2 coord);
     
 protected:
     GameMgr();

@@ -18,15 +18,19 @@ class Zeek
 public:
     static Zeek * create(Vec2 coordinate);
     
-    void moveTo(Vec2 coord);
+    void moveTo(const std::list<Vec2> & path);
     
     void death();
     
 protected:
     virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
     
+    Action* getMoveAction(Vec2 coord);
+    
 protected:
     std::map<ZeekState,Animate*> m_zeekAni;
+    
+    ZeekState   m_currentSate;//zeek当前的状态，用于控制动画
     
 };
 

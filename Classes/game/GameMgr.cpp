@@ -7,7 +7,7 @@
 //
 
 #include "GameMgr.h"
-
+#include "Zeek.h"
 static GameMgr * s_pGameMgr = nullptr;
 
 
@@ -152,7 +152,7 @@ void GameMgr::initGameObject()
        log("game map not loaded");
        return;
    }
-    auto objectLayer = m_gameMap->getLayer("hazard");
+    auto objectLayer = m_gameMap->getLayer(GAME_MAP_OBJECT_LAYER);
     if(!objectLayer)
     {
         log("game map not contain object layer");
@@ -173,10 +173,10 @@ void GameMgr::initGameObject()
                     m_zeek = Zeek::create(Vec2(i,j)); //创建主角
                     pushGameObject(m_zeek);//是否需要??
                     
-                    m_gameScene->addChild(m_zeek->m_bodySprite);
+                    m_gameScene->addChild(m_zeek);
                 }
                 auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i,j)));
-                m_zeek->m_bodySprite->setPosition(pos);
+                m_zeek->setPosition(pos);
             }
         }
     }
@@ -259,4 +259,17 @@ void GameMgr::onMapTouchEnd(cocos2d::Touch *touch, cocos2d::Event *event)
     Vec2 locationInNode = m_gameMap->convertToNodeSpace(touch->getLocation());
     int x = locationInNode.x / m_gameMap->getTileSize().width;
     int y = locationInNode.y / m_gameMap->getTileSize().height;
+}
+
+
+//地图相关
+Vec2 GameMgr::getPositionWithCoord(cocos2d::Vec2 coord)
+{
+    if(m_gameMap)
+    {
+        auto objectLayer = m_gameMap->getLayer(GAME_MAP_OBJECT_LAYER);
+        if(objectLayer)
+            return objectLayer->getPositionAt(coord);
+    }
+    return Vec2(-1,-1);
 }
