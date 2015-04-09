@@ -41,14 +41,7 @@ bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
     return true;
 }
 
-void Zeek::moveTo(Zeek::moveDir dir)
+void Zeek::moveTo(Vec2 coord)
 {
-    switch (dir) {
-        case moveDir_East:
-            
-            break;
-            
-        default:
-            break;
-    }
+
 }

@@ -14,30 +14,9 @@
 class GameObject
 {
 public:
-    
-    enum tiledGid
-    {
-        tiledGid_begin,
-        tiledGid_zeed,
-        tiledGid_apple,
-        tiledGid_ball,
-        tiledGid_openEater,
-        tiledGid_closeEater,
-        tiledGid_key,
-        tiledGid_door,
-        tiledGid_healthyFlower,
-        tiledGid_healthyMushroom,
-        tiledGid_electrode,
-        tiledGid_poisonousMushroom,
-        tiledGid_chest,
-        tiledGid_bomb
-    };
-    
-    
     GameObject();
     
     ~GameObject();
-    
     
     virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
     

@@ -15,30 +15,10 @@
 class Zeek
 : public GameObject
 {
-    enum ZeekState
-    {
-        walk_west,
-        walk_east,
-        walk_north,
-        walk_south,
-        poison,
-        rest
-    };
-    
-    enum moveDir
-    {
-        moveDir_West,
-        moveDir_East,
-        moveDir_North,
-        moveDir_South
-    };
-    
-    
-    
 public:
     static Zeek * create(Vec2 coordinate);
     
-    void moveTo(moveDir dir);
+    void moveTo(Vec2 coord);
     
     void death();
     

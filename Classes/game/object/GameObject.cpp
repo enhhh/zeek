@@ -23,7 +23,7 @@ GameObject::~GameObject()
     
 }
 
-bool GameObject::init(GameObject::tiledGid gid, cocos2d::Sprite *bodySprite, cocos2d::Vec2 coord)
+bool GameObject::init(tiledGid gid, cocos2d::Sprite *bodySprite, cocos2d::Vec2 coord)
 {
     m_bodySprite = bodySprite;
     m_tiledGid = gid;
