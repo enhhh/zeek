@@ -7,7 +7,7 @@
 //
 
 #include "Zeek.h"
-#include "GameMgr.h"
+#include "game/GameMgr.h"
 
 #define ZEEK_SPEED 1
 
@@ -42,7 +42,7 @@ bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
     }
     
     else
-        m_bodySprite->setDisplayFrame(frame);
+        m_bodySprite->setSpriteFrame(frame);
     m_bodySprite->runAction(RepeatForever::create(ani));
     return true;
 }

@@ -7,7 +7,7 @@
 //
 
 #include "GameMgr.h"
-#include "Zeek.h"
+#include "object/Zeek.h"
 static GameMgr * s_pGameMgr = nullptr;
 
 

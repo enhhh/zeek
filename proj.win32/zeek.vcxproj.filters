@@ -10,60 +10,72 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\object">
-      <UniqueIdentifier>{b0c12c0f-ba1c-479e-8f2e-f689409422e8}</UniqueIdentifier>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{4895c07f-a8a3-4847-9503-7907fa742b86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\ai">
-      <UniqueIdentifier>{9960a6e9-255f-4895-b5f7-b9d83ddd2eef}</UniqueIdentifier>
+    <Filter Include="src\game\AI">
+      <UniqueIdentifier>{04cf10f1-f2b0-4584-9b14-35817c331da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\object">
+      <UniqueIdentifier>{91e6d49e-0b77-4f15-aaa2-3c786cb6aff7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\AStar.cpp">
+      <Filter>src\game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Eater.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Flower.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\GameObject.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Zeek.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\GameMgr.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\object\Zeek.cpp">
-      <Filter>src\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AI\AStar.cpp">
-      <Filter>src\ai</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\object\Eater.cpp">
-      <Filter>src\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\object\Flower.cpp">
-      <Filter>src\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\game\AI\AStar.h">
+      <Filter>src\game\AI</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
+    <ClInclude Include="..\Classes\game\object\Eater.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Flower.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\GameObject.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Zeek.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\GameMgr.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\dataStruct.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\preInclude.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\object\Zeek.h">
-      <Filter>src\object</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AI\AStar.h">
-      <Filter>src\ai</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\object\Eater.h">
-      <Filter>src\object</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\object\Flower.h">
-      <Filter>src\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
