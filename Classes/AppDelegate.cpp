@@ -40,8 +40,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = Scene::create();
     director->runWithScene(scene);
-    GameMgr::getInstance()->setGameScene(scene);
-    
+    GameMgr::getInstance()->setGameScene(scene);    
     GameMgr::getInstance()->loadGame();
     // run
     
