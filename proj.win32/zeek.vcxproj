@@ -151,6 +151,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\game\AI\AStar.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\state.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h" />
+    <ClInclude Include="..\Classes\game\AI\stateMachine\zeekState\ZeekRestState.h" />
     <ClInclude Include="..\Classes\game\dataStruct.h" />
     <ClInclude Include="..\Classes\game\GameMgr.h" />
     <ClInclude Include="..\Classes\game\object\Eater.h" />

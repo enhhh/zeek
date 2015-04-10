@@ -49,7 +49,17 @@ bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
 
 void Zeek::moveTo(const std::list<Vec2> &path)
 {
-    
+	if (path.empty())
+		return;
+	auto pt = path;
+	auto action = getMoveAction(*pt.begin());
+	pt.pop_front();
+	auto endCall = [=](){
+		if (pt.empty())
+			return;
+		auto act = getMoveAction(*pt.begin());
+		this->runAction(Sequence::create(act, CallFunc::create(endCall), nullptr));
+	};
 }
 
 Action* Zeek::getMoveAction(Vec2 coord)
@@ -81,6 +91,10 @@ Action* Zeek::getMoveAction(Vec2 coord)
         };
         fun = CallFunc::create(lamda);
     }
-    if(fun)
-        return nullptr;
+	if (fun)
+	{
+		return Spawn::createWithTwoActions(MoveTo::create(0.5f, dest), fun);
+	}
+	else
+		return MoveTo::create(0.f, dest);
 }
