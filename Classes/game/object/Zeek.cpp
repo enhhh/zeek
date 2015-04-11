@@ -7,9 +7,16 @@
 //
 
 #include "Zeek.h"
-#include "game/GameMgr.h"
+#include "GameMgr.h"
 
 #define ZEEK_SPEED 1
+
+Zeek::Zeek()
+{
+    m_stateMachine = new StateMachine<Zeek>(this);
+    m_stateMachine->setCurrentState(zee)
+    
+}
 
 Zeek * Zeek::create(Vec2 coordinate)
 {

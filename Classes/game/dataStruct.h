@@ -30,7 +30,7 @@ enum tiledGid
     tiledGid_bomb
 };
 
-enum ZeekState
+enum ZeekAniIndex
 {
     walk_west,
     walk_east,
@@ -40,12 +40,12 @@ enum ZeekState
     rest
 };
 
-enum moveDir
+enum Enum_Direction
 {
-    moveDir_West,
-    moveDir_East,
-    moveDir_North,
-    moveDir_South
+    direction_west,
+    direction_east,
+    direction_north,
+    direction_south
 };
 
 

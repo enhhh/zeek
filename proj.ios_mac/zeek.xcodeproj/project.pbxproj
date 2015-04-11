@@ -71,6 +71,8 @@
 		B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F371AD6A07100D61398 /* Zeek.cpp */; };
 		B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F471AD6A0A300D61398 /* GameMgr.cpp */; };
 		B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F471AD6A0A300D61398 /* GameMgr.cpp */; };
+		B9DF0F571AD80B1F00D61398 /* ZeekState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */; };
+		B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -175,6 +177,10 @@
 		B9DF0F471AD6A0A300D61398 /* GameMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMgr.cpp; sourceTree = "<group>"; };
 		B9DF0F481AD6A0A300D61398 /* GameMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMgr.h; sourceTree = "<group>"; };
 		B9DF0F4B1AD6C7D000D61398 /* dataStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStruct.h; sourceTree = "<group>"; };
+		B9DF0F4E1AD7F39000D61398 /* state.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = state.h; sourceTree = "<group>"; };
+		B9DF0F4F1AD7F39000D61398 /* stateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stateMachine.h; sourceTree = "<group>"; };
+		B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeekState.cpp; sourceTree = "<group>"; };
+		B9DF0F561AD80B1F00D61398 /* ZeekState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeekState.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -382,6 +388,7 @@
 		B9DF0F291AD6A07100D61398 /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				B9DF0F4D1AD7F39000D61398 /* stateMachine */,
 				B9DF0F2A1AD6A07100D61398 /* AStar.cpp */,
 				B9DF0F2B1AD6A07100D61398 /* AStar.h */,
 			);
@@ -401,6 +408,17 @@
 				B9DF0F381AD6A07100D61398 /* Zeek.h */,
 			);
 			path = object;
+			sourceTree = "<group>";
+		};
+		B9DF0F4D1AD7F39000D61398 /* stateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF0F4E1AD7F39000D61398 /* state.h */,
+				B9DF0F4F1AD7F39000D61398 /* stateMachine.h */,
+				B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */,
+				B9DF0F561AD80B1F00D61398 /* ZeekState.h */,
+			);
+			path = stateMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,6 +576,7 @@
 				B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				B9DF0F571AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B9DF0F451AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F411AD6A07100D61398 /* GameObject.cpp in Sources */,
@@ -571,6 +590,7 @@
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F401AD6A07100D61398 /* Flower.cpp in Sources */,
+				B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F3E1AD6A07100D61398 /* Eater.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -752,6 +772,8 @@
 					"$(SRCROOT)/../cocos2d/extensions",
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/../Classes/game",
+					"$(SRCROOT)/../Classes",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -781,6 +803,8 @@
 					"$(SRCROOT)/../cocos2d/extensions",
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/../Classes/game",
+					"$(SRCROOT)/../Classes",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
