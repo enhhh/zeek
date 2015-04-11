@@ -22,11 +22,20 @@ public:
     
     void playAnimationWithIndex(ZeekAniIndex idx,bool repeat);
     
-    void setFaceTo(Enum_Direction dir);//will stop animation
+	void moveTo(Enum_Direction dir);
     
-    Vec2 getNextMovePos();
+    Vec2 getNextMoveCoord();
+
+	bool isMoving(){ return m_isMoving; }
     
-    
+	StateMachine<Zeek> * getStateMachine(){ return m_stateMachine; }
+
+	int getPathStep(){ return m_movePath.size(); }
+
+	void setFaceTo(Enum_Direction dir);//stop all body Animation
+
+	void setMovePath(const std::list<Vec2> &path){ m_movePath = path; }
+
 protected:
     
     Zeek();
@@ -49,6 +58,7 @@ protected:
     
     ZeekAniIndex m_currentAni;
     
+	bool m_isMoving;
     
 };
 

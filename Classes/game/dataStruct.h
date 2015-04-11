@@ -9,8 +9,17 @@
 #ifndef zeek_dataStruct_h
 #define zeek_dataStruct_h
 
-
+//config
 #define GAME_MAP_OBJECT_LAYER "hazard"
+
+#define ZEEK_MOVE_STEP_TIME 0.5f
+
+#define ZEEK_REST_TIME 5.0f
+
+#define ZEEK_TILED_OFFSET Vec2(18,18)
+
+
+//enum
 enum tiledGid
 {
     tiledGid_begin,
@@ -37,7 +46,8 @@ enum ZeekAniIndex
     walk_north,
     walk_south,
     poison,
-    rest
+    rest,
+	ZeekAniIndex_end
 };
 
 enum Enum_Direction

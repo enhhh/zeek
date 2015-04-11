@@ -19,12 +19,14 @@ public:
     
     virtual void enter(Zeek *);
     
-    virtual void execute(Zeek *);
+    virtual void execute(float delta,Zeek *);
     
     virtual void exit(Zeek *);
     
 protected:
     ZeekRestState();
+
+	float m_noOperatorTime;
 };
 
 class ZeekMoveState
@@ -35,13 +37,14 @@ public:
     
     virtual void enter(Zeek *);
     
-    virtual void execute(Zeek *);
+    virtual void execute(float delta,Zeek *);
     
     virtual void exit(Zeek *);
     
 protected:
     
     ZeekMoveState();
+
 };
 
 

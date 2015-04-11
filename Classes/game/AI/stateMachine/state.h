@@ -10,7 +10,7 @@ public:
 
 	virtual void enter(entity_type *) = 0;
 
-	virtual void execute(entity_type *) = 0;
+	virtual void execute(float delta,entity_type *) = 0;
 
 	virtual void exit(entity_type *) = 0;
 

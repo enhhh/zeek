@@ -20,11 +20,11 @@ public:
 		void setGlobalState(State<entity_type>* s) { m_pGlobalState = s; }
 		void setPreviousState(State<entity_type>* s){ m_pPreviousState = s; }
 
-		void  update()const
+		void  update(float delta)const
 		{
-			if (m_pGlobalState)   m_pGlobalState->execute(m_pOwner);
+			if (m_pGlobalState)   m_pGlobalState->execute(delta,m_pOwner);
 
-			if (m_pCurrentState) m_pCurrentState->execute(m_pOwner);
+			if (m_pCurrentState) m_pCurrentState->execute(delta,m_pOwner);
 		}
 
 		void  changeState(State<entity_type>* pNewState)
@@ -33,8 +33,8 @@ public:
 				"<StateMachine::ChangeState>: trying to change to NULL state");
 
 			m_pPreviousState = m_pCurrentState;
-
-			m_pCurrentState->exit(m_pOwner);
+			if (m_pCurrentState)
+				m_pCurrentState->exit(m_pOwner);
 
 			m_pCurrentState = pNewState;
 

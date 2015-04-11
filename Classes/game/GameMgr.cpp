@@ -8,6 +8,7 @@
 
 #include "GameMgr.h"
 #include "object/Zeek.h"
+#include "AI/AStar.h"
 static GameMgr * s_pGameMgr = nullptr;
 
 
@@ -258,7 +259,11 @@ void GameMgr::onMapTouchEnd(cocos2d::Touch *touch, cocos2d::Event *event)
 {
     Vec2 locationInNode = m_gameMap->convertToNodeSpace(touch->getLocation());
     int x = locationInNode.x / m_gameMap->getTileSize().width;
-    int y = locationInNode.y / m_gameMap->getTileSize().height;
+    int y = m_gameMap->getMapSize().height - locationInNode.y / m_gameMap->getTileSize().height;
+
+	bool result = PathFind::getInstance()->AStarSearch(m_gameMap, m_zeek->m_coord.x, m_zeek->m_coord.y, x, y);
+	if (result)
+		m_zeek->setMovePath(PathFind::getInstance()->astarPathList);
 }
 
 
@@ -269,7 +274,7 @@ Vec2 GameMgr::getPositionWithCoord(cocos2d::Vec2 coord)
     {
         auto objectLayer = m_gameMap->getLayer(GAME_MAP_OBJECT_LAYER);
         if(objectLayer)
-            return objectLayer->getPositionAt(coord);
+			return objectLayer->getPositionAt(coord) + ZEEK_TILED_OFFSET;
     }
     return Vec2(-1,-1);
 }
