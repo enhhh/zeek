@@ -19,6 +19,9 @@
     <Filter Include="src\game\object">
       <UniqueIdentifier>{91e6d49e-0b77-4f15-aaa2-3c786cb6aff7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\AI\stateMachine">
+      <UniqueIdentifier>{2fc605c4-ebc3-4898-a028-fc8662a38706}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\ZeekState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\preInclude.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\state.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\ZeekState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

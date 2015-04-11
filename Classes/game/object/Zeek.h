@@ -11,26 +11,54 @@
 
 #include "preInclude.h"
 #include "GameObject.h"
+#include  "AI/stateMachine/stateMachine.h"
 
 class Zeek
 : public GameObject
 {
 public:
+    
     static Zeek * create(Vec2 coordinate);
     
-    void moveTo(const std::list<Vec2> & path);
+    void playAnimationWithIndex(ZeekAniIndex idx,bool repeat);
     
-    void death();
+	void moveTo(Enum_Direction dir);
     
+    Vec2 getNextMoveCoord();
+
+	bool isMoving(){ return m_isMoving; }
+    
+	StateMachine<Zeek> * getStateMachine(){ return m_stateMachine; }
+
+	int getPathStep(){ return m_movePath.size(); }
+
+	void setFaceTo(Enum_Direction dir);//stop all body Animation
+
+	void setMovePath(const std::list<Vec2> &path){ m_movePath = path; }
+
 protected:
+    
+    Zeek();
+    
+    ~Zeek();
+    
     virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
     
     Action* getMoveAction(Vec2 coord);
     
-protected:
-    std::map<ZeekState,Animate*> m_zeekAni;
+    virtual void update(float delta) override;
     
-    ZeekState   m_currentSate;//zeek当前的状态，用于控制动画
+protected:
+    
+    std::map<ZeekAniIndex,Animate*> m_zeekAni;
+    
+    StateMachine<Zeek> * m_stateMachine;
+    
+    std::list<Vec2> m_movePath;
+    
+    ZeekAniIndex m_currentAni;
+    
+	bool m_isMoving;
     
 };
 
