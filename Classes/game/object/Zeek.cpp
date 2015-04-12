@@ -61,7 +61,7 @@ bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
 	animate = Animate::create(zeekAni);
 	animate->retain();
 	m_zeekAni[ZeekAniIndex::walk_east] = animate;
-
+    m_zeekAni[ZeekAniIndex::walk_west] = animate;
 	zeekAni = AnimationCache::getInstance()->getAnimation("zeed_walk_north");
 	animate = Animate::create(zeekAni);
 	animate->retain();
@@ -157,6 +157,7 @@ void Zeek::playAnimationWithIndex(ZeekAniIndex idx, bool repeat)
 		return;
 	m_currentAni = idx;
 
+    m_bodySprite->stopAllActions();
 	if (repeat)
 		m_bodySprite->runAction(RepeatForever::create(m_zeekAni[idx]));
 	else

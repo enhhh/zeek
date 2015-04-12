@@ -71,7 +71,7 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 		pOwner->getStateMachine()->changeState(ZeekRestState::getInstance());
 
 	Vec2 dir = curPos - nextPos;
-	ZeekAniIndex nextAni;
+	ZeekAniIndex nextAni = ZeekAniIndex_end;
 	if (dir.x == -1)
 	{
 		pOwner->moveTo(direction_west);
@@ -97,7 +97,7 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 		log("walk error : m_currentPos = (%f,%f), destPos = (%f,%f)", curPos.x, curPos.y, nextPos.x, nextPos.y);
 		pOwner->getStateMachine()->changeState(ZeekRestState::getInstance());
 	}
-
+    pOwner->playAnimationWithIndex(nextAni, true);
 }
 
 void ZeekMoveState::exit(Zeek *pOwner)
