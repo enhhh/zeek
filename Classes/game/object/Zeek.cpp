@@ -42,43 +42,22 @@ Zeek * Zeek::create(Vec2 coordinate)
 }
 
 
-bool Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)
+bool Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)
 {
-    GameObject::init(gid, bodySprite, coord);
+    GameObject::init(gid, bodyArmature, coord);
 
 	m_stateMachine = new StateMachine<Zeek>(this);
 	m_stateMachine->changeState(ZeekRestState::getInstance());
 
-    //从缓存中读动画.
-	Animation* zeekAni = nullptr;
-	Animate *animate = nullptr;
-	zeekAni = AnimationCache::getInstance()->getAnimation("zeek_rest");
-	animate = Animate::create(zeekAni);
-	animate->retain();
-	m_zeekAni[ZeekAniIndex::rest] = animate;
-
-	zeekAni = AnimationCache::getInstance()->getAnimation("zeed_walk_east");
-	animate = Animate::create(zeekAni);
-	animate->retain();
-	m_zeekAni[ZeekAniIndex::walk_east] = animate;
-    m_zeekAni[ZeekAniIndex::walk_west] = animate;
-	zeekAni = AnimationCache::getInstance()->getAnimation("zeed_walk_north");
-	animate = Animate::create(zeekAni);
-	animate->retain();
-	m_zeekAni[ZeekAniIndex::walk_north] = animate;
-
-	zeekAni = AnimationCache::getInstance()->getAnimation("zeed_walk_south");
-	animate = Animate::create(zeekAni);
-	animate->retain();
-	m_zeekAni[ZeekAniIndex::walk_south] = animate;
+    //从缓存中读动画
     
-    SpriteFrame* frame = SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_south1.png");
-	if (!m_bodySprite)
+	if (!m_bodyArmature)
     {
-        m_bodySprite = Sprite::createWithSpriteFrame(frame);
-		m_bodySprite->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
-        this->addChild(m_bodySprite);
+        m_bodyArmature = Armature::create("zeek");
+        m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
+        this->addChild(m_bodyArmature);
     }
+    
 	scheduleUpdate();
     return true;
 }
@@ -129,39 +108,32 @@ cocos2d::Vec2 Zeek::getNextMoveCoord()
 
 void Zeek::setFaceTo(Enum_Direction dir)
 {
-	m_bodySprite->stopAllActions();
 	switch (dir)
 	{
 	case direction_west:
-		m_bodySprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_east1.png"));
-		m_bodySprite->setScaleX(-1);
+            m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_west]);
 		break;
 	case direction_east:
-		m_bodySprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_east1.png"));
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_east]);
 		break;
 	case direction_north:
-		m_bodySprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_north1.png"));
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_north]);
 		break;
 	case direction_south:
-		m_bodySprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_south1.png"));
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_south]);
 		break;
 	default:
-		m_bodySprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("zeed_walk_south1.png"));
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_south]);
 		break;
 	}
 }
 
-void Zeek::playAnimationWithIndex(ZeekAniIndex idx, bool repeat)
+void Zeek::playAnimationWithIndex(ZeekAniIndex idx)
 {
 	if (m_currentAni == idx || idx == ZeekAniIndex_end)
 		return;
 	m_currentAni = idx;
-
-    m_bodySprite->stopAllActions();
-	if (repeat)
-		m_bodySprite->runAction(RepeatForever::create(m_zeekAni[idx]));
-	else
-		m_bodySprite->runAction(Sequence::create(m_zeekAni[idx], CallFunc::create([=](){m_currentAni = ZeekAniIndex_end; })));
+    m_bodyArmature->getAnimation()->play(ZeekAniStr[idx]);
 }
 
 void Zeek::update(float delta)

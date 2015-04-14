@@ -8,6 +8,7 @@
 
 #ifndef __zeek__AStar__
 #define __zeek__AStar__
+
 #include "preInclude.h"
 
 typedef struct tagAstartListNode

@@ -173,7 +173,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "Zeek::init(tiledGid gid,Sprite *bodySprite,Vec2 coord)"
+            landmarkName = "Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,7 +189,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
-            landmarkName = "Zeek::playAnimationWithIndex(ZeekAniIndex idx, bool repeat)"
+            landmarkName = "Zeek::playAnimationWithIndex(ZeekAniIndex idx)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

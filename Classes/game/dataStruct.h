@@ -5,7 +5,6 @@
 //  Created by enh on 15/4/9.
 //
 //
-
 #ifndef zeek_dataStruct_h
 #define zeek_dataStruct_h
 
@@ -45,10 +44,31 @@ enum ZeekAniIndex
     walk_east,
     walk_north,
     walk_south,
+    idle_west,
+    idle_east,
+    idle_north,
+    idle_south,
     poison,
     rest,
-	ZeekAniIndex_end
+    ZeekAniIndex_end
 };
+
+extern "C"
+{
+    const char* ZeekAniStr[ZeekAniIndex_end] =
+    {
+        "zeek_walk_west",
+        "zeek_walk_east",
+        "zeek_walk_north",
+        "zeek_walk_south",
+        "zeek_idle_west",
+        "zeek_idle_east",
+        "zeek_idle_south",
+        "zeek_poison",
+        "zeek_rest"
+    };
+
+}
 
 enum Enum_Direction
 {

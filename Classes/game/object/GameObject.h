@@ -19,13 +19,13 @@ public:
     
     ~GameObject();
     
-    virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
+    virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
     
 public:
     
     bool        m_isMoveable;//物体是否可以移动
     bool        m_isDestructible;//是否可以被破坏
-    Sprite*     m_bodySprite;
+    Armature*     m_bodyArmature;
     Vec2        m_coord;
     tiledGid    m_tiledGid;//物体在地图中的GID
 };

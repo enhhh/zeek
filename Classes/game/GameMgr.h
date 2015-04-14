@@ -8,10 +8,7 @@
 
 #ifndef __zeek__GameMgr__
 #define __zeek__GameMgr__
-
 #include "preInclude.h"
-#include "object/GameObject.h"
-
 class Zeek;
 class GameMgr
 {

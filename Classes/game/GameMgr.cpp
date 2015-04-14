@@ -5,10 +5,11 @@
 //  Created by enh on 15/4/9.
 //
 //
-
-#include "GameMgr.h"
-#include "object/Zeek.h"
 #include "AI/AStar.h"
+#include "object/Zeek.h"
+#include "GameMgr.h"
+
+
 static GameMgr * s_pGameMgr = nullptr;
 
 
@@ -55,6 +56,7 @@ void GameMgr::clearGameScene(bool clearCache)
     if(clearCache)
     {
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("sprites.plist");
+        ArmatureDataManager::getInstance()->destroyInstance();
         m_sourceInited = false;
     }
 }
@@ -112,30 +114,7 @@ void GameMgr::preloadSource()
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprites.plist");
     
-    Vector<SpriteFrame*> animations;
-    char str[100]={0};
-    Animation* animation = nullptr;
-    
-#define LOAD_ANIMAION(name,frameSize) \
-for(int i = 1; i<= frameSize; i++) \
-{                                   \
-sprintf(str,"%s%d.png",#name,i); \
-SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(str); \
-animations.pushBack(frame);\
-}\
-animation = Animation::createWithSpriteFrames(animations,0.5f);\
-AnimationCache::getInstance()->addAnimation(animation,#name); \
-animations.clear();
-    
-    
-    LOAD_ANIMAION(zeek_rest, 4)
-    LOAD_ANIMAION(zeed_walk_east, 4)
-    LOAD_ANIMAION(zeed_walk_north, 4)
-    LOAD_ANIMAION(zeed_walk_south, 4)
-    LOAD_ANIMAION(dinosaur_east, 4)
-    LOAD_ANIMAION(dinosaur_north, 4)
-    LOAD_ANIMAION(dinosaur_south, 4)
-    
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("zeek.ExportJson");
     
     m_sourceInited = true;
 }
@@ -207,9 +186,7 @@ bool GameMgr::removeGameObjectFromMap(GameObject *obj)
     {
         if(*object == obj)
         {
-            auto bodySprite = obj->m_bodySprite;
-            if(bodySprite)
-                bodySprite->removeFromParent();
+            obj->removeFromParent();
             m_objects.erase(object);
             return true;
         }
@@ -223,9 +200,7 @@ bool GameMgr::removeGameObjectFromMap(Vec2 coord)
     {
         if((*object)->m_coord == coord)
         {
-            auto bodySprite = (*object)->m_bodySprite;
-            if(bodySprite)
-                bodySprite->removeFromParent();
+            (*object)->removeFromParent();
             m_objects.erase(object);
             return true;
         }

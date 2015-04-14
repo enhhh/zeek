@@ -31,7 +31,7 @@ void ZeekRestState::execute(float delta,Zeek *pOwner)
 {
 	m_noOperatorTime += delta;
 	if (m_noOperatorTime >= ZEEK_REST_TIME)
-		pOwner->playAnimationWithIndex(ZeekAniIndex::rest, true);
+		pOwner->playAnimationWithIndex(ZeekAniIndex::rest);
 	if (pOwner->getPathStep() > 0)
 		pOwner->getStateMachine()->changeState(ZeekMoveState::getInstance());
 }
@@ -97,7 +97,7 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 		log("walk error : m_currentPos = (%f,%f), destPos = (%f,%f)", curPos.x, curPos.y, nextPos.x, nextPos.y);
 		pOwner->getStateMachine()->changeState(ZeekRestState::getInstance());
 	}
-    pOwner->playAnimationWithIndex(nextAni, true);
+    pOwner->playAnimationWithIndex(nextAni);
 }
 
 void ZeekMoveState::exit(Zeek *pOwner)

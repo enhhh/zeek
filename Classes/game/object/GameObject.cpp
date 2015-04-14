@@ -9,7 +9,7 @@
 #include "GameObject.h"
 
 GameObject::GameObject()
-: m_bodySprite(nullptr)
+: m_bodyArmature(nullptr)
 , m_isMoveable(false)
 , m_isDestructible(false)
 , m_tiledGid(tiledGid_begin)
@@ -23,12 +23,12 @@ GameObject::~GameObject()
     
 }
 
-bool GameObject::init(tiledGid gid, cocos2d::Sprite *bodySprite, cocos2d::Vec2 coord)
+bool GameObject::init(tiledGid gid, Armature *bodyArmature, cocos2d::Vec2 coord)
 {
-    m_bodySprite = bodySprite;
+    m_bodyArmature = bodyArmature;
     m_tiledGid = gid;
     m_coord = coord;
-    if(m_bodySprite)
-        this->addChild(m_bodySprite);
+    if(m_bodyArmature)
+        this->addChild(m_bodyArmature);
     return true;
 }

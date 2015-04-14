@@ -9,7 +9,6 @@
 #ifndef __zeek__Zeek__
 #define __zeek__Zeek__
 
-#include "preInclude.h"
 #include "GameObject.h"
 #include  "AI/stateMachine/stateMachine.h"
 
@@ -20,7 +19,7 @@ public:
     
     static Zeek * create(Vec2 coordinate);
     
-    void playAnimationWithIndex(ZeekAniIndex idx,bool repeat);
+    void playAnimationWithIndex(ZeekAniIndex idx);
     
 	void moveTo(Enum_Direction dir);
     
@@ -42,7 +41,7 @@ protected:
     
     ~Zeek();
     
-    virtual bool init(tiledGid gid,Sprite *bodySprite,Vec2 coord);
+    virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
     
     Action* getMoveAction(Vec2 coord);
     
