@@ -9,7 +9,7 @@
         {
           "name": "Layer1",
           "parent": "",
-          "dI": 1,
+          "dI": 0,
           "x": -1.5,
           "y": 1.980010986328125,
           "z": 1,
@@ -245,6 +245,34 @@
                   "kY": 0.0
                 }
               ]
+            },
+            {
+              "name": "zeek_rest3.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "zeek_rest4.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
             }
           ]
         }
@@ -334,7 +362,7 @@
         },
         {
           "name": "zeek_walk_west",
-          "dr": 4,
+          "dr": 3,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -411,7 +439,7 @@
         },
         {
           "name": "zeek_walk_south",
-          "dr": 4,
+          "dr": 3,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -488,7 +516,7 @@
         },
         {
           "name": "zeek_walk_north",
-          "dr": 4,
+          "dr": 3,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -565,7 +593,7 @@
         },
         {
           "name": "zeek_idle_east",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -597,7 +625,7 @@
         },
         {
           "name": "zeek_idle_west",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -629,7 +657,7 @@
         },
         {
           "name": "zeek_idle_north",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -661,7 +689,7 @@
         },
         {
           "name": "zeek_idle_south",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -693,7 +721,7 @@
         },
         {
           "name": "zeek_poison",
-          "dr": 4,
+          "dr": 3,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -759,6 +787,68 @@
                   "kX": 0.0,
                   "kY": 0.0,
                   "fi": 3,
+                  "twE": 0,
+                  "tweenFrame": true,
+                  "bd_src": 1,
+                  "bd_dst": 771
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "zeek_rest",
+          "dr": 9,
+          "lp": true,
+          "to": 0,
+          "drTW": 0,
+          "twE": 0,
+          "sc": 0.0833333358,
+          "mov_bone_data": [
+            {
+              "name": "Layer1",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 16,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true,
+                  "bd_src": 1,
+                  "bd_dst": 771
+                },
+                {
+                  "dI": 17,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 4,
+                  "twE": 0,
+                  "tweenFrame": true,
+                  "bd_src": 1,
+                  "bd_dst": 771
+                },
+                {
+                  "dI": 16,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
                   "bd_src": 1,
@@ -894,6 +984,22 @@
     },
     {
       "name": "zeed_poison4",
+      "width": 36.0,
+      "height": 36.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": "sprites.plist"
+    },
+    {
+      "name": "zeek_rest3",
+      "width": 36.0,
+      "height": 36.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": "sprites.plist"
+    },
+    {
+      "name": "zeek_rest4",
       "width": 36.0,
       "height": 36.0,
       "pX": 0.5,

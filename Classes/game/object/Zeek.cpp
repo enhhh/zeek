@@ -16,6 +16,7 @@ Zeek::Zeek()
 : m_stateMachine(nullptr)
 , m_isMoving(false)
 , m_currentAni(ZeekAniIndex_end)
+, m_currentFaceTo(direction_south)
 {
 
 }
@@ -66,20 +67,22 @@ void Zeek::moveTo(Enum_Direction dir)
 {
 	m_isMoving = true;
 
-	auto endcall = [=](){ m_isMoving = false; };
+	auto endcall = [=](){ m_isMoving = false;};
 
 	auto endAction = CallFunc::create(endcall);
 
+    m_currentFaceTo = dir;
+    
 	switch (dir)
 	{
 	case direction_west:
 		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(1, 0)))
+			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(-1, 0)))
 			,endAction,nullptr));
 		break;
 	case direction_east:
 		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(-1, 0)))
+			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(1, 0)))
 			, endAction, nullptr));
 		break;
 	case direction_north:
@@ -111,19 +114,19 @@ void Zeek::setFaceTo(Enum_Direction dir)
 	switch (dir)
 	{
 	case direction_west:
-            m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_west]);
+            m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_west]);
 		break;
 	case direction_east:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_east]);
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_east]);
 		break;
 	case direction_north:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_north]);
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_north]);
 		break;
 	case direction_south:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_south]);
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
 		break;
 	default:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::walk_south]);
+		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
 		break;
 	}
 }
@@ -139,4 +142,9 @@ void Zeek::playAnimationWithIndex(ZeekAniIndex idx)
 void Zeek::update(float delta)
 {
 	m_stateMachine->update(delta);
+}
+
+void Zeek::stopMove()
+{
+    setFaceTo(m_currentFaceTo);
 }

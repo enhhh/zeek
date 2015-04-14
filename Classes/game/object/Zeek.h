@@ -34,6 +34,8 @@ public:
 	void setFaceTo(Enum_Direction dir);//stop all body Animation
 
 	void setMovePath(const std::list<Vec2> &path){ m_movePath = path; }
+    
+    void stopMove();
 
 protected:
     
@@ -58,6 +60,7 @@ protected:
     ZeekAniIndex m_currentAni;
     
 	bool m_isMoving;
+    Enum_Direction m_currentFaceTo;
     
 };
 

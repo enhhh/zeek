@@ -9,7 +9,7 @@
         {
           "name": "Layer1",
           "parent": "",
-          "dI": 16,
+          "dI": 0,
           "x": -1.5,
           "y": 1.980010986328125,
           "z": 1,
@@ -516,7 +516,7 @@
         },
         {
           "name": "zeek_walk_north",
-          "dr": 4,
+          "dr": 3,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -593,7 +593,7 @@
         },
         {
           "name": "zeek_idle_east",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -625,7 +625,7 @@
         },
         {
           "name": "zeek_idle_west",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -689,7 +689,7 @@
         },
         {
           "name": "zeek_idle_south",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -721,7 +721,7 @@
         },
         {
           "name": "zeek_poison",
-          "dr": 4,
+          "dr": 3,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -798,7 +798,7 @@
         },
         {
           "name": "zeek_rest",
-          "dr": 10,
+          "dr": 9,
           "lp": true,
           "to": 0,
           "drTW": 0,

@@ -17,6 +17,7 @@
 
 #define ZEEK_TILED_OFFSET Vec2(18,18)
 
+extern const char* ZeekAniStr[];
 
 //enum
 enum tiledGid
@@ -53,22 +54,6 @@ enum ZeekAniIndex
     ZeekAniIndex_end
 };
 
-extern "C"
-{
-    const char* ZeekAniStr[ZeekAniIndex_end] =
-    {
-        "zeek_walk_west",
-        "zeek_walk_east",
-        "zeek_walk_north",
-        "zeek_walk_south",
-        "zeek_idle_west",
-        "zeek_idle_east",
-        "zeek_idle_south",
-        "zeek_poison",
-        "zeek_rest"
-    };
-
-}
 
 enum Enum_Direction
 {

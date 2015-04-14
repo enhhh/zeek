@@ -73,6 +73,10 @@
 		B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F471AD6A0A300D61398 /* GameMgr.cpp */; };
 		B9DF0F571AD80B1F00D61398 /* ZeekState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */; };
 		B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */; };
+		B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */; };
+		B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */; };
+		B9E6DF6E1ADD6057005016A1 /* armature in Resources */ = {isa = PBXBuildFile; fileRef = B9E6DF6D1ADD6057005016A1 /* armature */; };
+		B9E6DF6F1ADD6057005016A1 /* armature in Resources */ = {isa = PBXBuildFile; fileRef = B9E6DF6D1ADD6057005016A1 /* armature */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -181,6 +185,8 @@
 		B9DF0F4F1AD7F39000D61398 /* stateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stateMachine.h; sourceTree = "<group>"; };
 		B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeekState.cpp; sourceTree = "<group>"; };
 		B9DF0F561AD80B1F00D61398 /* ZeekState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeekState.h; sourceTree = "<group>"; };
+		B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataStruct.cpp; sourceTree = "<group>"; };
+		B9E6DF6D1ADD6057005016A1 /* armature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = armature; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -303,6 +309,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9E6DF6D1ADD6057005016A1 /* armature */,
 				B98805A31AC7FD6500152750 /* fonts */,
 				B98805A41AC7FD6500152750 /* sound */,
 				B98805A51AC7FD6500152750 /* sprites.plist */,
@@ -381,6 +388,7 @@
 				B9DF0F471AD6A0A300D61398 /* GameMgr.cpp */,
 				B9DF0F481AD6A0A300D61398 /* GameMgr.h */,
 				B9DF0F4B1AD6C7D000D61398 /* dataStruct.h */,
+				B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -524,6 +532,7 @@
 				B98805B31AC7FD6500152750 /* tileset.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				B98805AD1AC7FD6500152750 /* sprites.plist in Resources */,
+				B9E6DF6E1ADD6057005016A1 /* armature in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				B98805A91AC7FD6500152750 /* fonts in Resources */,
@@ -553,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98805AC1AC7FD6500152750 /* sound in Resources */,
+				B9E6DF6F1ADD6057005016A1 /* armature in Resources */,
 				B98805B21AC7FD6500152750 /* test.tmx in Resources */,
 				B98805B01AC7FD6500152750 /* sprites.png in Resources */,
 				B98805B41AC7FD6500152750 /* tileset.png in Resources */,
@@ -571,6 +581,7 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F3F1AD6A07100D61398 /* Flower.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */,
@@ -587,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F401AD6A07100D61398 /* Flower.cpp in Sources */,

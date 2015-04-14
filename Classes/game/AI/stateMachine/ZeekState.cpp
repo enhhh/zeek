@@ -70,14 +70,14 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 	if (curPos == nextPos)
 		pOwner->getStateMachine()->changeState(ZeekRestState::getInstance());
 
-	Vec2 dir = curPos - nextPos;
+	Vec2 dir = nextPos - curPos;
 	ZeekAniIndex nextAni = ZeekAniIndex_end;
 	if (dir.x == -1)
 	{
 		pOwner->moveTo(direction_west);
 		nextAni = ZeekAniIndex::walk_west;
 	}
-	else if (dir.y == -1)
+	else if (dir.y == 1)
 	{
 		nextAni = ZeekAniIndex::walk_south;
 		pOwner->moveTo(direction_south);
@@ -87,7 +87,7 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 		nextAni = ZeekAniIndex::walk_east;
 		pOwner->moveTo(direction_east);
 	}
-	else if (dir.y == 1)
+	else if (dir.y == -1)
 	{
 		nextAni = ZeekAniIndex::walk_north;
 		pOwner->moveTo(direction_north);
@@ -102,5 +102,5 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 
 void ZeekMoveState::exit(Zeek *pOwner)
 {
-	
+    pOwner->stopMove();
 }

@@ -114,7 +114,7 @@ void GameMgr::preloadSource()
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprites.plist");
     
-    ArmatureDataManager::getInstance()->addArmatureFileInfo("zeek.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/zeek.ExportJson");
     
     m_sourceInited = true;
 }
