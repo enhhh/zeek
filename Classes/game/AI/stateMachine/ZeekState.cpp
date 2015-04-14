@@ -68,7 +68,10 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 	Vec2 nextPos = pOwner->getNextMoveCoord();
 
 	if (curPos == nextPos)
+    {
 		pOwner->getStateMachine()->changeState(ZeekRestState::getInstance());
+        return;
+    }
 
 	Vec2 dir = nextPos - curPos;
 	ZeekAniIndex nextAni = ZeekAniIndex_end;

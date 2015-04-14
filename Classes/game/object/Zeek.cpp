@@ -18,15 +18,15 @@ Zeek::Zeek()
 , m_currentAni(ZeekAniIndex_end)
 , m_currentFaceTo(direction_south)
 {
-
+    
 }
 
 Zeek::~Zeek()
 {
-	m_movePath.clear();
-	delete m_stateMachine;
-	for (auto &ani : m_zeekAni)
-		ani.second->release();
+    m_movePath.clear();
+    delete m_stateMachine;
+    for (auto &ani : m_zeekAni)
+        ani.second->release();
 }
 
 Zeek * Zeek::create(Vec2 coordinate)
@@ -46,102 +46,104 @@ Zeek * Zeek::create(Vec2 coordinate)
 bool Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)
 {
     GameObject::init(gid, bodyArmature, coord);
-
-	m_stateMachine = new StateMachine<Zeek>(this);
-	m_stateMachine->changeState(ZeekRestState::getInstance());
-
+    
+    m_stateMachine = new StateMachine<Zeek>(this);
+    m_stateMachine->changeState(ZeekRestState::getInstance());
+    
     //从缓存中读动画
     
-	if (!m_bodyArmature)
+    if (!m_bodyArmature)
     {
         m_bodyArmature = Armature::create("zeek");
         m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
         this->addChild(m_bodyArmature);
     }
     
-	scheduleUpdate();
+    scheduleUpdate();
     return true;
 }
 
 void Zeek::moveTo(Enum_Direction dir)
 {
-	m_isMoving = true;
-
-	auto endcall = [=](){ m_isMoving = false;};
-
-	auto endAction = CallFunc::create(endcall);
-
+    m_isMoving = true;
+    
+    auto endcall = [=](){ m_isMoving = false;};
+    
+    auto endAction = CallFunc::create(endcall);
+    
     m_currentFaceTo = dir;
     
-	switch (dir)
-	{
-	case direction_west:
-		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(-1, 0)))
-			,endAction,nullptr));
-		break;
-	case direction_east:
-		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(1, 0)))
-			, endAction, nullptr));
-		break;
-	case direction_north:
-		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, -1)))
-			, endAction, nullptr));
-		break;
-	case direction_south:
-		this->runAction(Sequence::create(
-			MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, 1)))
-			, endAction, nullptr));
-		break;
-	default:
-		break;
-	}
+    switch (dir)
+    {
+        case direction_west:
+            this->runAction(Sequence::create(
+                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(-1, 0)))
+                                             ,endAction,nullptr));
+            break;
+        case direction_east:
+            this->runAction(Sequence::create(
+                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(1, 0)))
+                                             , endAction, nullptr));
+            break;
+        case direction_north:
+            this->runAction(Sequence::create(
+                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, -1)))
+                                             , endAction, nullptr));
+            break;
+        case direction_south:
+            this->runAction(Sequence::create(
+                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, 1)))
+                                             , endAction, nullptr));
+            break;
+        default:
+            break;
+    }
 }
 
 cocos2d::Vec2 Zeek::getNextMoveCoord()
 {
-	if (m_movePath.empty())
-		return m_coord;
-	auto vec = m_movePath.front();
-	m_movePath.pop_front();
-	return vec;
+    if (m_movePath.empty())
+        return m_coord;
+    auto vec = m_movePath.front();
+    m_movePath.pop_front();
+    return vec;
 }
 
 void Zeek::setFaceTo(Enum_Direction dir)
 {
-	switch (dir)
-	{
-	case direction_west:
-            m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_west]);
-		break;
-	case direction_east:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_east]);
-		break;
-	case direction_north:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_north]);
-		break;
-	case direction_south:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
-		break;
-	default:
-		m_bodyArmature->getAnimation()->play(ZeekAniStr[ZeekAniIndex::idle_south]);
-		break;
-	}
+    switch (dir)
+    {
+        case direction_west:
+            m_currentAni = ZeekAniIndex::idle_west;
+            break;
+        case direction_east:
+            m_currentAni = ZeekAniIndex::idle_east;
+            break;
+        case direction_north:
+            m_currentAni = ZeekAniIndex::idle_north;
+            break;
+        case direction_south:
+            m_currentAni = ZeekAniIndex::idle_south;
+            break;
+        default:
+            m_currentAni = ZeekAniIndex::idle_south;
+            break;
+    }
+    m_bodyArmature->getAnimation()->play(ZeekAniStr[m_currentAni]);
+    
 }
 
 void Zeek::playAnimationWithIndex(ZeekAniIndex idx)
 {
-	if (m_currentAni == idx || idx == ZeekAniIndex_end)
-		return;
-	m_currentAni = idx;
+    if (m_currentAni == idx || idx == ZeekAniIndex_end)
+        return;
+    m_currentAni = idx;
     m_bodyArmature->getAnimation()->play(ZeekAniStr[idx]);
 }
 
 void Zeek::update(float delta)
 {
-	m_stateMachine->update(delta);
+    m_stateMachine->update(delta);
 }
 
 void Zeek::stopMove()

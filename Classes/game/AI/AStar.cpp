@@ -268,7 +268,10 @@ bool PathFind::AStarSearch(TMXTiledMap* tiledMap, int startX, int startY, int en
             currentNode = currentNode->father;
             astarPathCount++;
         }
-        
+        astarPathList.pop_front();
+        astarPathCount--;
+        if(astarPathList.empty())
+            return false;
         return true;
     }
     
