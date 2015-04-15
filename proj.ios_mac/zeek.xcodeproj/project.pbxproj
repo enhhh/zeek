@@ -59,6 +59,8 @@
 		B98805B21AC7FD6500152750 /* test.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B98805A71AC7FD6500152750 /* test.tmx */; };
 		B98805B31AC7FD6500152750 /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = B98805A81AC7FD6500152750 /* tileset.png */; };
 		B98805B41AC7FD6500152750 /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = B98805A81AC7FD6500152750 /* tileset.png */; };
+		B9ACDB861ADEBBF9004C98FD /* EaterState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */; };
+		B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */; };
 		B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2F1AD6A07100D61398 /* Eater.cpp */; };
@@ -168,6 +170,8 @@
 		B98805A61AC7FD6500152750 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
 		B98805A71AC7FD6500152750 /* test.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.tmx; sourceTree = "<group>"; };
 		B98805A81AC7FD6500152750 /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
+		B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EaterState.cpp; sourceTree = "<group>"; };
+		B9ACDB851ADEBBF9004C98FD /* EaterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaterState.h; sourceTree = "<group>"; };
 		B9DF0F2A1AD6A07100D61398 /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
 		B9DF0F2B1AD6A07100D61398 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		B9DF0F2F1AD6A07100D61398 /* Eater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eater.cpp; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				B9DF0F4F1AD7F39000D61398 /* stateMachine.h */,
 				B9DF0F551AD80B1F00D61398 /* ZeekState.cpp */,
 				B9DF0F561AD80B1F00D61398 /* ZeekState.h */,
+				B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */,
+				B9ACDB851ADEBBF9004C98FD /* EaterState.h */,
 			);
 			path = stateMachine;
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				B9DF0F571AD80B1F00D61398 /* ZeekState.cpp in Sources */,
+				B9ACDB861ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				B9DF0F451AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F411AD6A07100D61398 /* GameObject.cpp in Sources */,
@@ -605,6 +612,7 @@
 				B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F3E1AD6A07100D61398 /* Eater.cpp in Sources */,
+				B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				B9DF0F421AD6A07100D61398 /* GameObject.cpp in Sources */,

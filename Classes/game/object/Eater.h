@@ -16,7 +16,9 @@ class Eater
 : public GameObject
 {
 public:
-    static Eater* create(Vec2 coord);
+    static Eater* create(Vec2 coord,bool state);
+    
+    void playAnimationWithIndex(EaterAniIndex idx);
     
 protected:
     
@@ -24,9 +26,16 @@ protected:
     
     ~Eater();
     
+    virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
+    
+protected:
     StateMachine<Eater> * m_stateMachine;
     
     EaterAniIndex m_currentAni;
+    
+    bool m_currentState;//true 打开状态
+    
+    bool m_chewing;//消化中
 };
 
 
