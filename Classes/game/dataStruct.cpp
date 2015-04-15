@@ -22,3 +22,18 @@ const char* ZeekAniStr[ZeekAniIndex_end] =
     "zeek_rest"
 };
 
+
+const char *EaterAniStr[eater_ani_end] =
+{
+    "eatApple_west",
+    "eatApple_east",
+    "eatApple_north",
+    "eatApple_south",
+    "eatZeek_west",
+    "eatZeek_east",
+    "eatZeek_north",
+    "eatZeek_south",
+    "opened",
+    "open",
+    "closed"
+};

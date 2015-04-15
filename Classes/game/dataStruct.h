@@ -17,8 +17,6 @@
 
 #define ZEEK_TILED_OFFSET Vec2(18,18)
 
-extern const char* ZeekAniStr[];
-
 //enum
 enum tiledGid
 {
@@ -39,6 +37,8 @@ enum tiledGid
     tiledGid_bomb
 };
 
+
+//zeek动画列表
 enum ZeekAniIndex
 {
     walk_west,
@@ -53,6 +53,28 @@ enum ZeekAniIndex
     rest,
     ZeekAniIndex_end
 };
+
+extern const char* ZeekAniStr[];
+
+//食人花动画列表
+enum EaterAniIndex
+{
+    eat_apple_west,
+    eat_apple_east,
+    eat_apple_north,
+    eat_apple_south,
+    eat_zeek_west,
+    eat_zeek_east,
+    eat_zeek_north,
+    eat_zeek_south,
+    eater_opened,
+    eater_open,
+    eater_closed,
+    eater_ani_end
+};
+
+extern const char* EaterAniStr[];
+
 
 
 enum Enum_Direction

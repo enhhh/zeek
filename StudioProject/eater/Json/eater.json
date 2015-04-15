@@ -4,12 +4,12 @@
     {
       "strVersion": "1.6.0.0",
       "version": 1.6,
-      "name": "flower",
+      "name": "eater",
       "bone_data": [
         {
           "name": "Layer2",
           "parent": "",
-          "dI": 0,
+          "dI": -1,
           "x": 30.0,
           "y": -4.019989013671875,
           "z": 2,
@@ -125,7 +125,7 @@
         {
           "name": "Layer1",
           "parent": "",
-          "dI": 4,
+          "dI": 1,
           "x": 0.0,
           "y": 0.0,
           "z": 1,
@@ -341,7 +341,7 @@
   ],
   "animation_data": [
     {
-      "name": "flower",
+      "name": "eater",
       "mov_data": [
         {
           "name": "opened",
@@ -377,7 +377,7 @@
         },
         {
           "name": "closed",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -409,7 +409,7 @@
         },
         {
           "name": "open",
-          "dr": 10,
+          "dr": 9,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -486,7 +486,7 @@
         },
         {
           "name": "eatApple_west",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -614,7 +614,7 @@
         },
         {
           "name": "eatApple_east",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -742,7 +742,7 @@
         },
         {
           "name": "eatApple_south",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -870,7 +870,7 @@
         },
         {
           "name": "eatApple_north",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -998,7 +998,7 @@
         },
         {
           "name": "eatZeek_west",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1126,7 +1126,7 @@
         },
         {
           "name": "eatZeek_east",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1254,7 +1254,7 @@
         },
         {
           "name": "eatZeek_south",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1382,7 +1382,7 @@
         },
         {
           "name": "eatZeek_north",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,

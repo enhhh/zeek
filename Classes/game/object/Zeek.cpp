@@ -25,8 +25,6 @@ Zeek::~Zeek()
 {
     m_movePath.clear();
     delete m_stateMachine;
-    for (auto &ani : m_zeekAni)
-        ani.second->release();
 }
 
 Zeek * Zeek::create(Vec2 coordinate)

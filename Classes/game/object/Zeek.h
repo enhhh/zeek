@@ -51,8 +51,6 @@ protected:
     
 protected:
     
-    std::map<ZeekAniIndex,Animate*> m_zeekAni;
-    
     StateMachine<Zeek> * m_stateMachine;
     
     std::list<Vec2> m_movePath;
