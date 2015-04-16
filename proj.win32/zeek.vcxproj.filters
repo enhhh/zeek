@@ -54,6 +54,9 @@
     <ClCompile Include="..\Classes\game\object\Zeek.cpp">
       <Filter>src\game\object</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -94,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\preInclude.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

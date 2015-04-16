@@ -40,7 +40,6 @@ void EaterOpenState::execute(float delta, Eater *pOwner)
     {
         if(obj->m_tiledGid == tiledGid_apple)
             pOwner->playAnimationWithIndex(eat_apple_north);
-        
     }
     
     

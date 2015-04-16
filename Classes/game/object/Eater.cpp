@@ -7,6 +7,7 @@
 //
 
 #include "Eater.h"
+#include "AI/stateMachine/EaterState.h"
 
 Eater::Eater()
 : m_chewing(nullptr)
@@ -47,6 +48,7 @@ bool Eater::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
     }
     
     m_stateMachine = new StateMachine<Eater>(this);
+	m_stateMachine->changeState(EaterOpenState::getInstance());
     return true;
 }
 

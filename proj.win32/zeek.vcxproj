@@ -141,6 +141,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\game\AI\AStar.cpp" />
+    <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp" />
     <ClCompile Include="..\Classes\game\AI\stateMachine\ZeekState.cpp" />
     <ClCompile Include="..\Classes\game\dataStruct.cpp" />
     <ClCompile Include="..\Classes\game\GameMgr.cpp" />
@@ -153,6 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\game\AI\AStar.h" />
+    <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\state.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\ZeekState.h" />

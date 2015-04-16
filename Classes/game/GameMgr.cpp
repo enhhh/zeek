@@ -8,6 +8,7 @@
 #include "AI/AStar.h"
 #include "object/Zeek.h"
 #include "GameMgr.h"
+#include "object/Eater.h"
 
 
 static GameMgr * s_pGameMgr = nullptr;
@@ -115,7 +116,7 @@ void GameMgr::preloadSource()
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprites.plist");
     
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/zeek.ExportJson");
-    
+	ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/eater.ExportJson");
     m_sourceInited = true;
 }
 
@@ -145,7 +146,8 @@ void GameMgr::initGameObject()
     {
         for(int j = 0 ; j < size.height;j++)
         {
-            if(objectLayer->getTileGIDAt(Vec2(i,j)) == tiledGid_zeed)
+			auto objGid = objectLayer->getTileGIDAt(Vec2(i, j));
+			if (objGid == tiledGid_zeed)
             {
                 objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
                 if(!m_zeek)
@@ -158,6 +160,17 @@ void GameMgr::initGameObject()
                 auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i,j)));
                 m_zeek->setPosition(pos);
             }
+			else if (objGid == tiledGid_openEater || objGid == tiledGid_closeEater)
+			{
+				objectLayer->getTileAt(Vec2(i, j))->removeFromParentAndCleanup(true);
+				auto obj = Eater::create(Vec2(i, j), true);
+				pushGameObject(obj);//是否需要??
+
+				m_gameScene->addChild(obj);
+
+				auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
+				obj->setPosition(pos);
+			}
         }
     }
 
