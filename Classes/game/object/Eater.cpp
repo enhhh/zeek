@@ -54,5 +54,10 @@ bool Eater::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
 
 void Eater::playAnimationWithIndex(EaterAniIndex idx)
 {
-    
+    m_bodyArmature->getAnimation()->play(EaterAniStr[idx]);
+}
+
+void Eater::update(float delta)
+{
+    m_stateMachine->update(delta);
 }

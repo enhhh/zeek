@@ -28,6 +28,8 @@ protected:
     
     virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
     
+    virtual void update(float delta);
+    
 protected:
     StateMachine<Eater> * m_stateMachine;
     

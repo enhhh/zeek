@@ -158,7 +158,7 @@ void GameMgr::initGameObject()
                     m_gameScene->addChild(m_zeek);
                 }
                 auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i,j)));
-                m_zeek->setPosition(pos);
+                m_zeek->setPosition(pos + ZEEK_TILED_OFFSET);
             }
 			else if (objGid == tiledGid_openEater || objGid == tiledGid_closeEater)
 			{
@@ -169,7 +169,7 @@ void GameMgr::initGameObject()
 				m_gameScene->addChild(obj);
 
 				auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
-				obj->setPosition(pos);
+				obj->setPosition(pos + ZEEK_TILED_OFFSET);
 			}
         }
     }
