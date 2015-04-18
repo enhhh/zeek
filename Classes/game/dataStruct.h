@@ -34,7 +34,15 @@ enum tiledGid
     tiledGid_electrode,
     tiledGid_poisonousMushroom,
     tiledGid_chest,
-    tiledGid_bomb
+    tiledGid_bomb,
+    tiledGid_elected,
+    tiledGid_oil,
+    tiledGid_poisonFlower,
+    tiledGid_magicEgg,
+    tiledGid_dinosaur,
+    tiledGid_evilEyes,
+    tiledGid_bugApple,
+    tiledGid_wall
 };
 
 
