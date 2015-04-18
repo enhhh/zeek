@@ -9,7 +9,7 @@
         {
           "name": "Layer1",
           "parent": "",
-          "dI": 0,
+          "dI": 2,
           "x": 0.0,
           "y": 0.0,
           "z": 1,
@@ -49,6 +49,20 @@
                   "kY": 0.0
                 }
               ]
+            },
+            {
+              "name": "apple.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
             }
           ]
         }
@@ -61,17 +75,39 @@
       "mov_data": [
         {
           "name": "helthApple",
-          "dr": 0,
-          "lp": true,
+          "dr": 1,
+          "lp": false,
           "to": 0,
           "drTW": 0,
           "twE": 0,
-          "sc": 1.0,
-          "mov_bone_data": []
+          "sc": 0.0166666675,
+          "mov_bone_data": [
+            {
+              "name": "Layer1",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 2,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true,
+                  "bd_src": 1,
+                  "bd_dst": 771
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "bugApple",
-          "dr": 21,
+          "dr": 20,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -147,6 +183,14 @@
       "name": "bug2",
       "width": 36.0,
       "height": 36.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": "sprites.plist"
+    },
+    {
+      "name": "apple",
+      "width": 0.0,
+      "height": 0.0,
       "pX": 0.5,
       "pY": 0.5,
       "plistFile": "sprites.plist"

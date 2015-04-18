@@ -77,23 +77,23 @@ void ZeekMoveState::execute(float delta,Zeek *pOwner)
 	ZeekAniIndex nextAni = ZeekAniIndex_end;
 	if (dir.x == -1)
 	{
-		pOwner->moveTo(direction_west);
+		pOwner->move(direction_west);
 		nextAni = ZeekAniIndex::walk_west;
 	}
 	else if (dir.y == 1)
 	{
 		nextAni = ZeekAniIndex::walk_south;
-		pOwner->moveTo(direction_south);
+		pOwner->move(direction_south);
 	}
 	else if (dir.x == 1)
 	{
 		nextAni = ZeekAniIndex::walk_east;
-		pOwner->moveTo(direction_east);
+		pOwner->move(direction_east);
 	}
 	else if (dir.y == -1)
 	{
 		nextAni = ZeekAniIndex::walk_north;
-		pOwner->moveTo(direction_north);
+		pOwner->move(direction_north);
 	}
 	else
 	{

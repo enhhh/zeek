@@ -31,13 +31,14 @@ protected:
     virtual void update(float delta);
     
 protected:
-    StateMachine<Eater> * m_stateMachine;
+
     
     EaterAniIndex m_currentAni;
     
     bool m_currentState;//true 打开状态
-    
-    bool m_chewing;//消化中
+public:
+    StateMachine<Eater> * m_stateMachine;
+    bool m_isPlayingAnimation;//eater通过动画播放时间来决定状态变更
 };
 
 

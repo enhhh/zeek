@@ -333,6 +333,20 @@
                   "kY": 0.0
                 }
               ]
+            },
+            {
+              "name": "sprites_PList.Dir/eater_open1.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
             }
           ]
         }
@@ -377,7 +391,7 @@
         },
         {
           "name": "closed",
-          "dr": 0,
+          "dr": 1,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -389,7 +403,7 @@
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 1,
+                  "dI": 14,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -409,7 +423,7 @@
         },
         {
           "name": "open",
-          "dr": 9,
+          "dr": 10,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1671,6 +1685,14 @@
       "pX": 0.5,
       "pY": 0.5,
       "plistFile": "sprites.plist"
+    },
+    {
+      "name": "sprites_PList.Dir/eater_open1",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [

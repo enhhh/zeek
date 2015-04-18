@@ -61,7 +61,7 @@ bool Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)
     return true;
 }
 
-void Zeek::moveTo(Enum_Direction dir)
+bool Zeek::move(Enum_Direction dir)
 {
     m_isMoving = true;
     
@@ -96,6 +96,7 @@ void Zeek::moveTo(Enum_Direction dir)
         default:
             break;
     }
+    return true;
 }
 
 cocos2d::Vec2 Zeek::getNextMoveCoord()

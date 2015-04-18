@@ -43,6 +43,7 @@ public:
     
     Vec2 getPositionWithCoord(Vec2 coord);
     
+    const Size& getMapSize();
 protected:
     GameMgr();
     

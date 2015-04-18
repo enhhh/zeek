@@ -9,7 +9,7 @@
 #include "object/Zeek.h"
 #include "GameMgr.h"
 #include "object/Eater.h"
-
+#include "object/Apple.h"
 
 static GameMgr * s_pGameMgr = nullptr;
 
@@ -117,6 +117,7 @@ void GameMgr::preloadSource()
     
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/zeek.ExportJson");
 	ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/eater.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/apple.ExportJson");
     m_sourceInited = true;
 }
 
@@ -146,31 +147,36 @@ void GameMgr::initGameObject()
     {
         for(int j = 0 ; j < size.height;j++)
         {
-			auto objGid = objectLayer->getTileGIDAt(Vec2(i, j));
-			if (objGid == tiledGid_zeed)
-            {
-                objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
-                if(!m_zeek)
-                {
-                    m_zeek = Zeek::create(Vec2(i,j)); //创建主角
-                    pushGameObject(m_zeek);//是否需要??
-                    
-                    m_gameScene->addChild(m_zeek);
-                }
-                auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i,j)));
-                m_zeek->setPosition(pos + ZEEK_TILED_OFFSET);
+			tiledGid objGid = (tiledGid)objectLayer->getTileGIDAt(Vec2(i, j));
+            GameObject *object = nullptr;
+            switch (objGid) {
+                case tiledGid_apple:
+                    object = Apple::create(Vec2(i,j),false);
+                    break;
+                case tiledGid_bugApple:
+                    object = Apple::create(Vec2(i, j),true);
+                    break;
+                case tiledGid_zeed:
+                     m_zeek = Zeek::create(Vec2(i,j));
+                    object = m_zeek;
+                    break;
+                case tiledGid_openEater:
+                    object = Eater::create(Vec2(i,j), true);
+                    break;
+                case tiledGid_closeEater:
+                    object = Eater::create(Vec2(i,j), false);
+                    break;
+                default:
+                    break;
             }
-			else if (objGid == tiledGid_openEater || objGid == tiledGid_closeEater)
-			{
-				objectLayer->getTileAt(Vec2(i, j))->removeFromParentAndCleanup(true);
-				auto obj = Eater::create(Vec2(i, j), true);
-				pushGameObject(obj);//是否需要??
-
-				m_gameScene->addChild(obj);
-
-				auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
-				obj->setPosition(pos + ZEEK_TILED_OFFSET);
-			}
+            if(!object)
+                continue;
+            auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
+            object->setPosition(pos + ZEEK_TILED_OFFSET);
+            objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
+            pushGameObject(object);
+            
+            m_gameScene->addChild(object);
         }
     }
 
@@ -265,4 +271,12 @@ Vec2 GameMgr::getPositionWithCoord(cocos2d::Vec2 coord)
 			return objectLayer->getPositionAt(coord) + ZEEK_TILED_OFFSET;
     }
     return Vec2(-1,-1);
+}
+
+const Size& GameMgr::getMapSize()
+{
+    if(m_gameMap)
+        return m_gameMap->getMapSize();
+    else
+        return Size::ZERO;
 }

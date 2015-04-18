@@ -10,9 +10,9 @@
 #include "AI/stateMachine/EaterState.h"
 
 Eater::Eater()
-: m_chewing(nullptr)
-, m_currentState(false)
+: m_currentState(false)
 , m_currentAni(eater_ani_end)
+, m_isPlayingAnimation(false)
 {
     
 }
@@ -47,13 +47,26 @@ bool Eater::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
         this->addChild(m_bodyArmature);
     }
     
+    auto movementCallFunc = [=](Armature *armature, MovementEventType movementType, const std::string& movementID)
+    {
+        if (movementType == MovementEventType::COMPLETE) {
+            m_isPlayingAnimation = false;
+        }
+    };
+    
+    m_bodyArmature->getAnimation()->setMovementEventCallFunc(movementCallFunc);
+    
     m_stateMachine = new StateMachine<Eater>(this);
 	m_stateMachine->changeState(EaterOpenState::getInstance());
+    scheduleUpdate();
     return true;
 }
 
 void Eater::playAnimationWithIndex(EaterAniIndex idx)
 {
+    if(idx == m_currentAni)
+        return;
+    m_isPlayingAnimation = true;
     m_bodyArmature->getAnimation()->play(EaterAniStr[idx]);
 }
 

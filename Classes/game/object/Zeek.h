@@ -21,7 +21,7 @@ public:
     
     void playAnimationWithIndex(ZeekAniIndex idx);
     
-	void moveTo(Enum_Direction dir);
+	virtual bool move(Enum_Direction dir);
     
     Vec2 getNextMoveCoord();
 

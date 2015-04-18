@@ -9,7 +9,7 @@
         {
           "name": "Layer2",
           "parent": "",
-          "dI": 0,
+          "dI": -1,
           "x": 30.0,
           "y": -4.019989013671875,
           "z": 2,
@@ -125,7 +125,7 @@
         {
           "name": "Layer1",
           "parent": "",
-          "dI": 4,
+          "dI": 1,
           "x": 0.0,
           "y": 0.0,
           "z": 1,
@@ -333,6 +333,20 @@
                   "kY": 0.0
                 }
               ]
+            },
+            {
+              "name": "eater_open1.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
             }
           ]
         }
@@ -389,7 +403,7 @@
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 1,
+                  "dI": 14,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -486,7 +500,7 @@
         },
         {
           "name": "eatApple_west",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -614,7 +628,7 @@
         },
         {
           "name": "eatApple_east",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -742,7 +756,7 @@
         },
         {
           "name": "eatApple_south",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -870,7 +884,7 @@
         },
         {
           "name": "eatApple_north",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -998,7 +1012,7 @@
         },
         {
           "name": "eatZeek_west",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1126,7 +1140,7 @@
         },
         {
           "name": "eatZeek_east",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1254,7 +1268,7 @@
         },
         {
           "name": "eatZeek_south",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1382,7 +1396,7 @@
         },
         {
           "name": "eatZeek_north",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -1671,6 +1685,14 @@
       "pX": 0.5,
       "pY": 0.5,
       "plistFile": "sprites.plist"
+    },
+    {
+      "name": "eater_open1",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [
