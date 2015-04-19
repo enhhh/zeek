@@ -21,7 +21,6 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-    
 }
 
 bool GameObject::init(tiledGid gid, Armature *bodyArmature, cocos2d::Vec2 coord)

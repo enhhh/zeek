@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="17" height="12" tilewidth="36" tileheight="36">
+ <tileset firstgid="1" name="tileset" tilewidth="36" tileheight="36">
+  <image source="tileset.png" width="256" height="256"/>
+ </tileset>
+ <layer name="ground" width="17" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NkYGBgHMWjeBQThQFNWgzuMAMAAA==
+  </data>
+ </layer>
+ <layer name="hazard" width="17" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA51RiwoCMQwrHnOeorDzYP//p1pIMISeoIXQdc2yPmZEzD+glvGK8wA8x3yTe9dgLrkLMIS7FG+OYn+vNd7EV71t8A/w0vc3TtBTnQHf7a8pGukvRc75Z4t39MA6aFo/NZrccxYVvGetKw543KnucZUcjTzed9NgfbrHqibibjPK8yY6LT674jye6OkqGu3LPH7FC99uXaIwAwAA
+  </data>
+ </layer>
+</map>

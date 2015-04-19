@@ -17,6 +17,7 @@
 #include "object/Electrode.h"
 #include "object/Chest.h"
 #include "object/mushroom.h"
+#include <stdio.h>
 
 static GameMgr * s_pGameMgr = nullptr;
 
@@ -26,6 +27,7 @@ GameMgr::GameMgr()
 , m_gameMap(nullptr)
 , m_sourceInited(false)
 , m_gameScene(nullptr)
+, m_currentLevel(0)
 {
     
 }
@@ -54,22 +56,38 @@ void GameMgr::setGameScene(cocos2d::Scene *scene)
 void GameMgr::clearGameScene(bool clearCache)
 {
     for (auto object : m_objects) {
-        delete object;
+        object->removeFromParentAndCleanup(true);
     }
     m_objects.clear();
     m_zeek = nullptr;//主角在m_objects里一起被释放
     if(m_gameMap)
+    {
         m_gameMap->removeFromParent();
-    m_gameScene = nullptr;
+        m_gameMap = nullptr;
+    }
+    
+    
     if(clearCache)
     {
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("sprites.plist");
         ArmatureDataManager::getInstance()->destroyInstance();
         m_sourceInited = false;
+        m_gameScene = nullptr;
     }
 }
 
 
+void GameMgr::gotoNextLevel()
+{
+    clearGameScene(false);
+    loadGame(m_currentLevel+1);
+}
+
+void GameMgr::restartCurrentLevel()
+{
+    clearGameScene(false);
+    loadGame(m_currentLevel);
+}
 
 bool GameMgr::loadGame(int level)
 {
@@ -80,12 +98,15 @@ bool GameMgr::loadGame(int level)
         clearGameScene(false);
     if (!level) {
         //测试信息
-        m_gameMap = TMXTiledMap::create("Level12.tmx");
+        m_gameMap = TMXTiledMap::create("test.tmx");
     }
     else
     {
-        
+        char path[255] = {0};
+        sprintf(path,"level/Level%d.tmx", level);
+        m_gameMap = TMXTiledMap::create(path);
     }
+    m_currentLevel = level;
     
     if(!m_gameMap)
         return false;

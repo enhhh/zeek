@@ -21,6 +21,11 @@ public:
     void clearGameScene(bool clearCache = true);//切换场景后清空游戏信息
     
     void setGameScene(Scene *scene);
+    
+    void gotoNextLevel();
+    
+    void restartCurrentLevel();
+    
     //资源管理
     
     bool isSourceInited(){return m_sourceInited;}
@@ -65,6 +70,7 @@ protected:
     TMXTiledMap*        m_gameMap;
     Zeek*               m_zeek;
     Scene*              m_gameScene;
+    int                 m_currentLevel;
 };
 
 #endif /* defined(__zeek__GameMgr__) */

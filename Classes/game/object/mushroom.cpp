@@ -63,7 +63,7 @@ bool Mushroom::move(Enum_Direction dir,GameObject *pusher)
     {
         Zeek *ptr = static_cast<Zeek*>(pusher);
         //ptr->m_keys++;
-        
+        GameMgr::getInstance()->gotoNextLevel();
         //加分
     }
     GameMgr::getInstance()->removeGameObjectFromMap(this);

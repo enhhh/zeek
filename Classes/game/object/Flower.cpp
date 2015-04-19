@@ -61,7 +61,7 @@ bool Flower::move(Enum_Direction dir,GameObject *pusher)
     if(pusher && pusher->m_tiledGid == tiledGid_zeed)
     {
         Zeek *ptr = static_cast<Zeek*>(pusher);
-        ptr->m_keys++;
+        //加分
     }
     GameMgr::getInstance()->removeGameObjectFromMap(this);
     return true;
