@@ -49,6 +49,9 @@ protected:
     
     virtual void update(float delta) override;
     
+public:
+    int     m_keys;
+    
 protected:
     
     StateMachine<Zeek> * m_stateMachine;

@@ -17,6 +17,7 @@ Zeek::Zeek()
 , m_isMoving(false)
 , m_currentAni(ZeekAniIndex_end)
 , m_currentFaceTo(direction_south)
+, m_keys(0)
 {
     
 }
@@ -63,7 +64,7 @@ bool Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)
 
 bool Zeek::move(Enum_Direction dir)
 {
-    m_isMoving = true;
+
     
     auto endcall = [=](){ m_isMoving = false;};
     
@@ -71,32 +72,51 @@ bool Zeek::move(Enum_Direction dir)
     
     m_currentFaceTo = dir;
     
+    Vec2 targetPos =Vec2::ZERO;
+
     switch (dir)
     {
         case direction_west:
-            this->runAction(Sequence::create(
-                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(-1, 0)))
-                                             ,endAction,nullptr));
+            
+            targetPos =m_coord + Vec2(-1, 0);
             break;
         case direction_east:
-            this->runAction(Sequence::create(
-                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(1, 0)))
-                                             , endAction, nullptr));
+
+            targetPos = m_coord + Vec2(1,0);
             break;
         case direction_north:
-            this->runAction(Sequence::create(
-                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, -1)))
-                                             , endAction, nullptr));
+            targetPos = m_coord + Vec2(0,-1);
             break;
         case direction_south:
-            this->runAction(Sequence::create(
-                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord += Vec2(0, 1)))
-                                             , endAction, nullptr));
+            targetPos = m_coord + Vec2(0,1);
             break;
         default:
             break;
     }
-    return true;
+    
+    auto obj = GameMgr::getInstance()->getGameObjectWithCoord(targetPos);
+    if(!obj)
+    {
+        m_isMoving = true;
+        m_coord = targetPos;
+        this->runAction(Sequence::create(
+                                         MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord))
+                                         ,endAction,nullptr));
+        return true;
+    }
+    else
+    {
+        if (obj->move(dir,this)) {
+            m_isMoving = true;
+            m_coord = targetPos;
+            this->runAction(Sequence::create(
+                                             MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(m_coord))
+                                             ,endAction,nullptr));
+            return true;
+        }
+    }
+
+    return false;
 }
 
 cocos2d::Vec2 Zeek::getNextMoveCoord()

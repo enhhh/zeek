@@ -10,6 +10,9 @@
 #include "GameMgr.h"
 #include "object/Eater.h"
 #include "object/Apple.h"
+#include "object/wall.h"
+#include "object/Flower.h"
+#include "object/Key.h"
 
 static GameMgr * s_pGameMgr = nullptr;
 
@@ -118,6 +121,10 @@ void GameMgr::preloadSource()
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/zeek.ExportJson");
 	ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/eater.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/apple.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/ball.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/key.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/flower.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/electrode.ExportJson");
     m_sourceInited = true;
 }
 
@@ -148,6 +155,8 @@ void GameMgr::initGameObject()
         for(int j = 0 ; j < size.height;j++)
         {
 			tiledGid objGid = (tiledGid)objectLayer->getTileGIDAt(Vec2(i, j));
+            if(!objGid)
+                continue;
             GameObject *object = nullptr;
             switch (objGid) {
                 case tiledGid_apple:
@@ -166,14 +175,25 @@ void GameMgr::initGameObject()
                 case tiledGid_closeEater:
                     object = Eater::create(Vec2(i,j), false);
                     break;
+                case tiledGid_poisonFlower:
+                    object = Flower::create(Vec2(i,j), true);
+                    break;
+                case tiledGid_healthyFlower:
+                    object = Flower::create(Vec2(i,j), false);
+                    break;
+                case tiledGid_key:
+                    object = Key::create(Vec2(i,j));
+                    break;
                 default:
+                    object = Wall::create(Vec2(i,j));
                     break;
             }
             if(!object)
                 continue;
             auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
             object->setPosition(pos + ZEEK_TILED_OFFSET);
-            objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
+            if(objGid < tiledGid_wall)
+                objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
             pushGameObject(object);
             
             m_gameScene->addChild(object);

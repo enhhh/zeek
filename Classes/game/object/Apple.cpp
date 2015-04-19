@@ -11,7 +11,7 @@
 Apple::Apple()
 : m_hasBug(false)
 {
-    
+    m_isMoveable = true;
 }
 
 

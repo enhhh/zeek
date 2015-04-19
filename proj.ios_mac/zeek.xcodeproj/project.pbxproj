@@ -63,6 +63,12 @@
 		B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */; };
 		B9ACDB8A1AE22675004C98FD /* Apple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDB881AE22675004C98FD /* Apple.cpp */; };
 		B9ACDB8B1AE22675004C98FD /* Apple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDB881AE22675004C98FD /* Apple.cpp */; };
+		B9ACDDA91AE39386004C98FD /* wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDA71AE39386004C98FD /* wall.cpp */; };
+		B9ACDDAA1AE39386004C98FD /* wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDA71AE39386004C98FD /* wall.cpp */; };
+		B9ACDDAD1AE3A8E8004C98FD /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAB1AE3A8E8004C98FD /* Key.cpp */; };
+		B9ACDDAE1AE3A8E8004C98FD /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAB1AE3A8E8004C98FD /* Key.cpp */; };
+		B9ACDDB11AE3AD51004C98FD /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAF1AE3AD51004C98FD /* Door.cpp */; };
+		B9ACDDB21AE3AD51004C98FD /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAF1AE3AD51004C98FD /* Door.cpp */; };
 		B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2F1AD6A07100D61398 /* Eater.cpp */; };
@@ -176,6 +182,12 @@
 		B9ACDB851ADEBBF9004C98FD /* EaterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaterState.h; sourceTree = "<group>"; };
 		B9ACDB881AE22675004C98FD /* Apple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Apple.cpp; sourceTree = "<group>"; };
 		B9ACDB891AE22675004C98FD /* Apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apple.h; sourceTree = "<group>"; };
+		B9ACDDA71AE39386004C98FD /* wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wall.cpp; sourceTree = "<group>"; };
+		B9ACDDA81AE39386004C98FD /* wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wall.h; sourceTree = "<group>"; };
+		B9ACDDAB1AE3A8E8004C98FD /* Key.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Key.cpp; sourceTree = "<group>"; };
+		B9ACDDAC1AE3A8E8004C98FD /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		B9ACDDAF1AE3AD51004C98FD /* Door.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Door.cpp; sourceTree = "<group>"; };
+		B9ACDDB01AE3AD51004C98FD /* Door.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Door.h; sourceTree = "<group>"; };
 		B9DF0F2A1AD6A07100D61398 /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
 		B9DF0F2B1AD6A07100D61398 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		B9DF0F2F1AD6A07100D61398 /* Eater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eater.cpp; sourceTree = "<group>"; };
@@ -424,6 +436,12 @@
 				B9DF0F381AD6A07100D61398 /* Zeek.h */,
 				B9ACDB881AE22675004C98FD /* Apple.cpp */,
 				B9ACDB891AE22675004C98FD /* Apple.h */,
+				B9ACDDA71AE39386004C98FD /* wall.cpp */,
+				B9ACDDA81AE39386004C98FD /* wall.h */,
+				B9ACDDAB1AE3A8E8004C98FD /* Key.cpp */,
+				B9ACDDAC1AE3A8E8004C98FD /* Key.h */,
+				B9ACDDAF1AE3AD51004C98FD /* Door.cpp */,
+				B9ACDDB01AE3AD51004C98FD /* Door.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -592,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				B9ACDDAD1AE3A8E8004C98FD /* Key.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F3F1AD6A07100D61398 /* Flower.cpp in Sources */,
@@ -599,6 +618,8 @@
 				B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				B9ACDDA91AE39386004C98FD /* wall.cpp in Sources */,
+				B9ACDDB11AE3AD51004C98FD /* Door.cpp in Sources */,
 				B9DF0F571AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B9ACDB861ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				B9DF0F451AD6A07100D61398 /* Zeek.cpp in Sources */,
@@ -617,10 +638,13 @@
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F401AD6A07100D61398 /* Flower.cpp in Sources */,
+				B9ACDDAE1AE3A8E8004C98FD /* Key.cpp in Sources */,
 				B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F3E1AD6A07100D61398 /* Eater.cpp in Sources */,
+				B9ACDDB21AE3AD51004C98FD /* Door.cpp in Sources */,
 				B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */,
+				B9ACDDAA1AE39386004C98FD /* wall.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				B9DF0F421AD6A07100D61398 /* GameObject.cpp in Sources */,

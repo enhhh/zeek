@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>Y:\Developer\zeek\StudioProject\electrode</ProjectDir>
+  <Version>1.6.0.0</Version>
+  <Resources>Y:\Developer\zeek\StudioProject\electrode\Resources</Resources>
+  <Name>electrode</Name>
+  <JsonFileName>electrode.json</JsonFileName>
+  <JsonFolder>Y:\Developer\zeek\StudioProject\electrode\Json</JsonFolder>
+  <JsonList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <filePath>Y:\Developer\zeek\StudioProject\electrode\electrode.xml.animation</filePath>
+  <ProjectType>AnimationProject</ProjectType>
+  <ResRelativePath />
+  <ResourceFileList>
+    <string>sprites.plist</string>
+  </ResourceFileList>
+  <bBatchImage>true</bBatchImage>
+</AnimationProject>

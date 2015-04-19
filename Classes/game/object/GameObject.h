@@ -21,7 +21,7 @@ public:
     
     virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
     
-    virtual bool move(Enum_Direction dir);
+    virtual bool move(Enum_Direction dir,GameObject *pusher = nullptr);
     
     virtual bool onCollided(GameObject *from);
     

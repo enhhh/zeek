@@ -34,7 +34,7 @@ bool GameObject::init(tiledGid gid, Armature *bodyArmature, cocos2d::Vec2 coord)
     return true;
 }
 
-bool GameObject::move(Enum_Direction dir)
+bool GameObject::move(Enum_Direction dir,GameObject *pusher)
 {
     if(!m_isMoveable)
         return false;
@@ -66,6 +66,7 @@ bool GameObject::move(Enum_Direction dir)
     if(obj)
         return false;
     m_isMoving = true;
+    m_coord = targetVec;
     auto endcall = [=](){ m_isMoving = false;};
     this->runAction(Sequence::create(
                                      MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(targetVec))
