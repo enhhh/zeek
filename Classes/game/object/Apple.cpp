@@ -12,6 +12,7 @@ Apple::Apple()
 : m_hasBug(false)
 {
     m_isMoveable = true;
+    m_isDestructible = true;
 }
 
 
@@ -25,7 +26,6 @@ Apple * Apple::create(cocos2d::Vec2 coord, bool hasBug)
     auto ptr = new Apple();
     if(ptr && ptr->init(hasBug?tiledGid_bugApple:tiledGid_apple, nullptr, coord))
     {
-        ptr->m_hasBug = hasBug;
         ptr->autorelease();
         return ptr;
     }
@@ -46,8 +46,11 @@ bool Apple::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
             m_bodyArmature->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             this->addChild(m_bodyArmature);
         }
-        if(m_hasBug)
+        if(gid == tiledGid_bugApple)
+        {
             m_bodyArmature->getAnimation()->play("bugApple");
+            m_hasBug = true;
+        }
         else
             m_bodyArmature->getAnimation()->play("helthApple");
     }

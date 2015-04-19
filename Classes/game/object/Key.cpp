@@ -11,7 +11,8 @@
 #include "GameMgr.h"
 Key::Key()
 {
-    
+    m_isDestructible = true;
+    m_isMoveable = false;
 }
 
 Key * Key::create(cocos2d::Vec2 coord)

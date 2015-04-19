@@ -7,7 +7,7 @@
       "name": "flower",
       "bone_data": [
         {
-          "name": "Layer1",
+          "name": "Layer2",
           "parent": "",
           "dI": 1,
           "x": 0.0,
@@ -22,20 +22,6 @@
           "effectbyskeleton": false,
           "bl": 0,
           "display_data": [
-            {
-              "name": "sprites_PList.Dir/poison_flower.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
             {
               "name": "poison_flower.png",
               "displayType": 0,
@@ -52,48 +38,6 @@
             },
             {
               "name": "health_flower.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "apple.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "bomb1.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "health_mushroom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -125,11 +69,11 @@
           "sc": 0.0166666675,
           "mov_bone_data": [
             {
-              "name": "Layer1",
+              "name": "Layer2",
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 2,
+                  "dI": 1,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -157,11 +101,11 @@
           "sc": 0.0166666675,
           "mov_bone_data": [
             {
-              "name": "Layer1",
+              "name": "Layer2",
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 1,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -185,22 +129,14 @@
   "texture_data": [
     {
       "name": "poison_flower",
-      "width": 36.0,
-      "height": 36.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "health_flower",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
       "pY": 0.5,
-      "plistFile": ""
+      "plistFile": "sprites.plist"
     },
     {
-      "name": "health_mushroom",
+      "name": "health_flower",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,

@@ -69,6 +69,20 @@
 		B9ACDDAE1AE3A8E8004C98FD /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAB1AE3A8E8004C98FD /* Key.cpp */; };
 		B9ACDDB11AE3AD51004C98FD /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAF1AE3AD51004C98FD /* Door.cpp */; };
 		B9ACDDB21AE3AD51004C98FD /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDAF1AE3AD51004C98FD /* Door.cpp */; };
+		B9ACDDB51AE3B66E004C98FD /* Electrode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDB31AE3B66E004C98FD /* Electrode.cpp */; };
+		B9ACDDB61AE3B66E004C98FD /* Electrode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDB31AE3B66E004C98FD /* Electrode.cpp */; };
+		B9ACDDB91AE3C21E004C98FD /* ElectrodeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDB71AE3C21E004C98FD /* ElectrodeState.cpp */; };
+		B9ACDDBA1AE3C21E004C98FD /* ElectrodeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDB71AE3C21E004C98FD /* ElectrodeState.cpp */; };
+		B9ACDDBC1AE3CA1F004C98FD /* Level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9ACDDBB1AE3CA1F004C98FD /* Level1.tmx */; };
+		B9ACDDBD1AE3CA1F004C98FD /* Level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9ACDDBB1AE3CA1F004C98FD /* Level1.tmx */; };
+		B9ACDDBF1AE3D03F004C98FD /* Level12.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9ACDDBE1AE3D03F004C98FD /* Level12.tmx */; };
+		B9ACDDC01AE3D03F004C98FD /* Level12.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9ACDDBE1AE3D03F004C98FD /* Level12.tmx */; };
+		B9ACDDC31AE3DD43004C98FD /* mushroom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC11AE3DD43004C98FD /* mushroom.cpp */; };
+		B9ACDDC41AE3DD43004C98FD /* mushroom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC11AE3DD43004C98FD /* mushroom.cpp */; };
+		B9ACDDC71AE3E366004C98FD /* Chest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC51AE3E366004C98FD /* Chest.cpp */; };
+		B9ACDDC81AE3E366004C98FD /* Chest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC51AE3E366004C98FD /* Chest.cpp */; };
+		B9ACDDCB1AE3E6B3004C98FD /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC91AE3E6B3004C98FD /* Bomb.cpp */; };
+		B9ACDDCC1AE3E6B3004C98FD /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDC91AE3E6B3004C98FD /* Bomb.cpp */; };
 		B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2F1AD6A07100D61398 /* Eater.cpp */; };
@@ -188,6 +202,18 @@
 		B9ACDDAC1AE3A8E8004C98FD /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		B9ACDDAF1AE3AD51004C98FD /* Door.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Door.cpp; sourceTree = "<group>"; };
 		B9ACDDB01AE3AD51004C98FD /* Door.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Door.h; sourceTree = "<group>"; };
+		B9ACDDB31AE3B66E004C98FD /* Electrode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Electrode.cpp; sourceTree = "<group>"; };
+		B9ACDDB41AE3B66E004C98FD /* Electrode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Electrode.h; sourceTree = "<group>"; };
+		B9ACDDB71AE3C21E004C98FD /* ElectrodeState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElectrodeState.cpp; sourceTree = "<group>"; };
+		B9ACDDB81AE3C21E004C98FD /* ElectrodeState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectrodeState.h; sourceTree = "<group>"; };
+		B9ACDDBB1AE3CA1F004C98FD /* Level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Level1.tmx; sourceTree = "<group>"; };
+		B9ACDDBE1AE3D03F004C98FD /* Level12.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Level12.tmx; sourceTree = "<group>"; };
+		B9ACDDC11AE3DD43004C98FD /* mushroom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mushroom.cpp; sourceTree = "<group>"; };
+		B9ACDDC21AE3DD43004C98FD /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
+		B9ACDDC51AE3E366004C98FD /* Chest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chest.cpp; sourceTree = "<group>"; };
+		B9ACDDC61AE3E366004C98FD /* Chest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chest.h; sourceTree = "<group>"; };
+		B9ACDDC91AE3E6B3004C98FD /* Bomb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bomb.cpp; sourceTree = "<group>"; };
+		B9ACDDCA1AE3E6B3004C98FD /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
 		B9DF0F2A1AD6A07100D61398 /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
 		B9DF0F2B1AD6A07100D61398 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		B9DF0F2F1AD6A07100D61398 /* Eater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eater.cpp; sourceTree = "<group>"; };
@@ -329,6 +355,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9ACDDBE1AE3D03F004C98FD /* Level12.tmx */,
+				B9ACDDBB1AE3CA1F004C98FD /* Level1.tmx */,
 				B9E6DF6D1ADD6057005016A1 /* armature */,
 				B98805A31AC7FD6500152750 /* fonts */,
 				B98805A41AC7FD6500152750 /* sound */,
@@ -442,6 +470,14 @@
 				B9ACDDAC1AE3A8E8004C98FD /* Key.h */,
 				B9ACDDAF1AE3AD51004C98FD /* Door.cpp */,
 				B9ACDDB01AE3AD51004C98FD /* Door.h */,
+				B9ACDDB31AE3B66E004C98FD /* Electrode.cpp */,
+				B9ACDDB41AE3B66E004C98FD /* Electrode.h */,
+				B9ACDDC11AE3DD43004C98FD /* mushroom.cpp */,
+				B9ACDDC21AE3DD43004C98FD /* mushroom.h */,
+				B9ACDDC51AE3E366004C98FD /* Chest.cpp */,
+				B9ACDDC61AE3E366004C98FD /* Chest.h */,
+				B9ACDDC91AE3E6B3004C98FD /* Bomb.cpp */,
+				B9ACDDCA1AE3E6B3004C98FD /* Bomb.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -455,6 +491,8 @@
 				B9DF0F561AD80B1F00D61398 /* ZeekState.h */,
 				B9ACDB841ADEBBF9004C98FD /* EaterState.cpp */,
 				B9ACDB851ADEBBF9004C98FD /* EaterState.h */,
+				B9ACDDB71AE3C21E004C98FD /* ElectrodeState.cpp */,
+				B9ACDDB81AE3C21E004C98FD /* ElectrodeState.h */,
 			);
 			path = stateMachine;
 			sourceTree = "<group>";
@@ -568,6 +606,7 @@
 				B98805A91AC7FD6500152750 /* fonts in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				B9ACDDBF1AE3D03F004C98FD /* Level12.tmx in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -579,6 +618,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				B9ACDDBC1AE3CA1F004C98FD /* Level1.tmx in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				B98805AF1AC7FD6500152750 /* sprites.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
@@ -598,7 +638,9 @@
 				B98805B41AC7FD6500152750 /* tileset.png in Resources */,
 				B98805AE1AC7FD6500152750 /* sprites.plist in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				B9ACDDBD1AE3CA1F004C98FD /* Level1.tmx in Resources */,
 				B98805AA1AC7FD6500152750 /* fonts in Resources */,
+				B9ACDDC01AE3D03F004C98FD /* Level12.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,8 +654,11 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				B9ACDDAD1AE3A8E8004C98FD /* Key.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				B9ACDDC31AE3DD43004C98FD /* mushroom.cpp in Sources */,
+				B9ACDDB91AE3C21E004C98FD /* ElectrodeState.cpp in Sources */,
 				B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F3F1AD6A07100D61398 /* Flower.cpp in Sources */,
+				B9ACDDCB1AE3E6B3004C98FD /* Bomb.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
@@ -624,7 +669,9 @@
 				B9ACDB861ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				B9DF0F451AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */,
+				B9ACDDB51AE3B66E004C98FD /* Electrode.cpp in Sources */,
 				B9ACDB8A1AE22675004C98FD /* Apple.cpp in Sources */,
+				B9ACDDC71AE3E366004C98FD /* Chest.cpp in Sources */,
 				B9DF0F411AD6A07100D61398 /* GameObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,20 +681,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9ACDB8B1AE22675004C98FD /* Apple.cpp in Sources */,
+				B9ACDDC41AE3DD43004C98FD /* mushroom.cpp in Sources */,
 				B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F401AD6A07100D61398 /* Flower.cpp in Sources */,
+				B9ACDDB61AE3B66E004C98FD /* Electrode.cpp in Sources */,
 				B9ACDDAE1AE3A8E8004C98FD /* Key.cpp in Sources */,
 				B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */,
+				B9ACDDCC1AE3E6B3004C98FD /* Bomb.cpp in Sources */,
 				B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F3E1AD6A07100D61398 /* Eater.cpp in Sources */,
 				B9ACDDB21AE3AD51004C98FD /* Door.cpp in Sources */,
 				B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				B9ACDDAA1AE39386004C98FD /* wall.cpp in Sources */,
+				B9ACDDBA1AE3C21E004C98FD /* ElectrodeState.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				B9DF0F421AD6A07100D61398 /* GameObject.cpp in Sources */,
+				B9ACDDC81AE3E366004C98FD /* Chest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

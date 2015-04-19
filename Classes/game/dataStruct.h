@@ -78,6 +78,10 @@ enum EaterAniIndex
     eater_opened,
     eater_open,
     eater_closed,
+    eater_bugApple_west,
+    eater_bugApple_east,
+    eater_bugApple_north,
+    eater_bugApple_south,
     eater_ani_end
 };
 

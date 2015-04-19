@@ -57,7 +57,10 @@ bool Eater::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
     m_bodyArmature->getAnimation()->setMovementEventCallFunc(movementCallFunc);
     
     m_stateMachine = new StateMachine<Eater>(this);
-	m_stateMachine->changeState(EaterOpenState::getInstance());
+    if(m_currentState)
+        m_stateMachine->changeState(EaterOpenState::getInstance());
+    else
+        m_stateMachine->changeState(EaterClosedState::getInstance());
     scheduleUpdate();
     return true;
 }

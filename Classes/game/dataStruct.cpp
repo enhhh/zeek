@@ -35,5 +35,9 @@ const char *EaterAniStr[eater_ani_end] =
     "eatZeek_south",
     "opened",
     "open",
-    "closed"
+    "closed",
+    "eatBugApple_west",
+    "eatBugApple_east",
+    "eatBugApple_north",
+    "eatBugApple_south"
 };

@@ -13,6 +13,10 @@
 #include "object/wall.h"
 #include "object/Flower.h"
 #include "object/Key.h"
+#include "object/Door.h"
+#include "object/Electrode.h"
+#include "object/Chest.h"
+#include "object/mushroom.h"
 
 static GameMgr * s_pGameMgr = nullptr;
 
@@ -76,7 +80,7 @@ bool GameMgr::loadGame(int level)
         clearGameScene(false);
     if (!level) {
         //测试信息
-        m_gameMap = TMXTiledMap::create("test.tmx");
+        m_gameMap = TMXTiledMap::create("Level12.tmx");
     }
     else
     {
@@ -125,6 +129,9 @@ void GameMgr::preloadSource()
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/key.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/flower.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/electrode.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/door.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/chest.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/mushroom.ExportJson");
     m_sourceInited = true;
 }
 
@@ -183,6 +190,21 @@ void GameMgr::initGameObject()
                     break;
                 case tiledGid_key:
                     object = Key::create(Vec2(i,j));
+                    break;
+                case tiledGid_door:
+                    object = Door::create(Vec2(i,j));
+                    break;
+                case tiledGid_electrode:
+                    object = Electrode::create(Vec2(i,j));
+                    break;
+                case tiledGid_chest:
+                    object = Chest::create(Vec2(i,j));
+                    break;
+                case tiledGid_healthyMushroom:
+                    object = Mushroom::create(Vec2(i,j), false);
+                    break;
+                case tiledGid_poisonousMushroom:
+                    object = Mushroom::create(Vec2(i,j), true);
                     break;
                 default:
                     object = Wall::create(Vec2(i,j));

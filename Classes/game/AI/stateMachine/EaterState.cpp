@@ -42,51 +42,95 @@ void EaterOpenState::execute(float delta, Eater *pOwner)
     do
     {
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(0,-1));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
         {
             dir = direction_north;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(0,1));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
         {
             dir = direction_south;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(1,0));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
         {
             dir = direction_east;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(-1,0));
-        dir = direction_west;
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
+        {
+            dir = direction_west;
+            break;
+        }
+        obj = nullptr;
     }while (0);
-
+    
     if(obj)
     {
         if(obj->m_tiledGid == tiledGid_apple)
         {
+        switch (dir) {
+            case direction_east:
+                pOwner->playAnimationWithIndex(eat_apple_east);
+                break;
+            case direction_west:
+                pOwner->playAnimationWithIndex(eat_apple_west);
+                break;
+            case direction_south:
+                pOwner->playAnimationWithIndex(eat_apple_south);
+                break;
+            case direction_north:
+                pOwner->playAnimationWithIndex(eat_apple_north);
+                break;
+            default:
+                break;
+        }
+        }else if(obj->m_tiledGid == tiledGid_zeed)
+        {
             switch (dir) {
                 case direction_east:
-                    pOwner->playAnimationWithIndex(eat_apple_east);
+                    pOwner->playAnimationWithIndex(eat_zeek_east);
                     break;
                 case direction_west:
-                    pOwner->playAnimationWithIndex(eat_apple_west);
+                    pOwner->playAnimationWithIndex(eat_zeek_west);
                     break;
                 case direction_south:
-                    pOwner->playAnimationWithIndex(eat_apple_south);
+                    pOwner->playAnimationWithIndex(eat_zeek_south);
                     break;
                 case direction_north:
-                    pOwner->playAnimationWithIndex(eat_apple_north);
+                    pOwner->playAnimationWithIndex(eat_zeek_north);
                     break;
                 default:
                     break;
             }
-            GameMgr::getInstance()->removeGameObjectFromMap(obj);
-            pOwner->m_stateMachine->changeState(EaterChewState::getInstance());
+        }else if(obj-> m_tiledGid == tiledGid_bugApple)
+        {
+            switch (dir) {
+                case direction_east:
+                    pOwner->playAnimationWithIndex(eater_bugApple_east);
+                    break;
+                case direction_west:
+                    pOwner->playAnimationWithIndex(eater_bugApple_west);
+                    break;
+                case direction_south:
+                    pOwner->playAnimationWithIndex(eater_bugApple_south);
+                    break;
+                case direction_north:
+                    pOwner->playAnimationWithIndex(eater_bugApple_north);
+                    break;
+                default:
+                    break;
+            }
         }
-
+        GameMgr::getInstance()->removeGameObjectFromMap(obj);
+        pOwner->m_stateMachine->changeState(EaterChewState::getInstance());
         return;
     }
 }
@@ -127,29 +171,38 @@ void EaterClosedState::execute(float delta, Eater *pOwner)
     do
     {
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(0,-1));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed) )
         {
             dir = direction_west;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(0,1));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed) )
         {
             dir = direction_east;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(1,0));
-        if(obj)
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
         {
             dir = direction_south;
             break;
         }
         obj = GameMgr::getInstance()->getGameObjectWithCoord(coord + Vec2(-1,0));
-        dir = direction_north;
+        if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
+                   ||obj->m_tiledGid == tiledGid_zeed))
+        {
+            dir = direction_north;
+            break;
+        }
+        obj = nullptr;
+        
     }while (0);
     
-    if(obj && (obj->m_tiledGid == tiledGid_apple ||obj->m_tiledGid == tiledGid_bugApple
-               ||obj->m_tiledGid == tiledGid_zeed))
+    if(obj)
     {
         pOwner->m_stateMachine->changeState(EaterOpenState::getInstance());
     }
@@ -171,7 +224,7 @@ EaterChewState::EaterChewState()
 
 EaterChewState* EaterChewState::getInstance()
 {
-    if(! s_pEaterClosedState)
+    if(! s_pEaterChewState)
     {
         s_pEaterChewState = new EaterChewState();
     }
