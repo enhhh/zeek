@@ -163,7 +163,7 @@ bool PathFind::AstarIsBlock(int x, int y)
     {
         TMXLayer* mapLayer = tiledMap->getLayer("hazard");
         unsigned int gid = mapLayer->getTileGIDAt(Vec2(x, y));
-        if(gid >= 21)
+        if(gid >= 21 || gid == tiledGid_oil)
         {
             return true;
         }

@@ -8,6 +8,9 @@
 #ifndef zeek_dataStruct_h
 #define zeek_dataStruct_h
 
+#include "cocos2d.h"
+USING_NS_CC;
+
 //config
 #define GAME_MAP_OBJECT_LAYER "hazard"
 
@@ -85,6 +88,20 @@ enum EaterAniIndex
     eater_ani_end
 };
 
+enum DinosaurAniIndex
+{
+    dinosaur_idle_west,
+    dinosaur_idle_south,
+    dinosaur_idle_east,
+    dinosaur_idle_north,
+    dinosaur_walk_west,
+    dinosaur_walk_south,
+    dinosaur_walk_east,
+    dinosaur_walk_north,
+    DinosaurAniIndexEnd
+};
+
+extern const char* DinosaurAniStr[];
 extern const char* EaterAniStr[];
 
 
@@ -94,8 +111,11 @@ enum Enum_Direction
     direction_west,
     direction_east,
     direction_north,
-    direction_south
+    direction_south,
+    direction_end
 };
+
+extern const Vec2 DirectVector[];
 
 
 #endif

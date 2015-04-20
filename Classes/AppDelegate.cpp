@@ -42,7 +42,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto scene = Scene::create();
     director->runWithScene(scene);
     GameMgr::getInstance()->setGameScene(scene);    
-    GameMgr::getInstance()->loadGame(12);
+    GameMgr::getInstance()->loadGame(15);
     // run
     
     return true;

@@ -20,7 +20,7 @@
 #include "object/magicEgg.h"
 #include "object/Ball.h"
 #include "object/Bomb.h"
-
+#include "object/Dinosaur.h"
 #include <stdio.h>
 
 static GameMgr * s_pGameMgr = nullptr;
@@ -160,6 +160,7 @@ void GameMgr::preloadSource()
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/magicEgg.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/oil.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/bomb.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/dinosaur.ExportJson");
     m_sourceInited = true;
 }
 
@@ -246,6 +247,9 @@ void GameMgr::initGameObject()
                 case tiledGid_bomb:
                     object = Bomb::create(Vec2(i,j));
                     break;
+                case tiledGid_dinosaur:
+                    object = Dinosaur::create(Vec2(i,j));
+                    break;
                 default:
                     object = Wall::create(Vec2(i,j));
                     break;
@@ -254,7 +258,7 @@ void GameMgr::initGameObject()
                 continue;
             auto pos = objectLayer->convertToWorldSpace(objectLayer->getPositionAt(Vect(i, j)));
             object->setPosition(pos + ZEEK_TILED_OFFSET);
-            if(objGid < tiledGid_wall)
+            if(objGid < tiledGid_wall && objGid != tiledGid_oil)
                 objectLayer->getTileAt(Vec2(i,j))->removeFromParentAndCleanup(true);
             pushGameObject(object);
             

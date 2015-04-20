@@ -85,6 +85,10 @@
 		B9ACDDCF1AE3F3F7004C98FD /* level in Resources */ = {isa = PBXBuildFile; fileRef = B9ACDDCD1AE3F3F7004C98FD /* level */; };
 		B9ACDDD21AE3F8BD004C98FD /* magicEgg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDD01AE3F8BD004C98FD /* magicEgg.cpp */; };
 		B9ACDDD31AE3F8BD004C98FD /* magicEgg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9ACDDD01AE3F8BD004C98FD /* magicEgg.cpp */; };
+		B9D1D5211AE54075004CA315 /* Dinosaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */; };
+		B9D1D5221AE54075004CA315 /* Dinosaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */; };
+		B9D1D5251AE5489E004CA315 /* DinosaurState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */; };
+		B9D1D5261AE5489E004CA315 /* DinosaurState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */; };
 		B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2F1AD6A07100D61398 /* Eater.cpp */; };
@@ -219,6 +223,10 @@
 		B9ACDDCD1AE3F3F7004C98FD /* level */ = {isa = PBXFileReference; lastKnownFileType = folder; path = level; sourceTree = "<group>"; };
 		B9ACDDD01AE3F8BD004C98FD /* magicEgg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = magicEgg.cpp; sourceTree = "<group>"; };
 		B9ACDDD11AE3F8BD004C98FD /* magicEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = magicEgg.h; sourceTree = "<group>"; };
+		B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dinosaur.cpp; sourceTree = "<group>"; };
+		B9D1D5201AE54075004CA315 /* Dinosaur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dinosaur.h; sourceTree = "<group>"; };
+		B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DinosaurState.cpp; sourceTree = "<group>"; };
+		B9D1D5241AE5489E004CA315 /* DinosaurState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DinosaurState.h; sourceTree = "<group>"; };
 		B9DF0F2A1AD6A07100D61398 /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
 		B9DF0F2B1AD6A07100D61398 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		B9DF0F2F1AD6A07100D61398 /* Eater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eater.cpp; sourceTree = "<group>"; };
@@ -486,6 +494,8 @@
 				B9ACDDD11AE3F8BD004C98FD /* magicEgg.h */,
 				B99B5E151AE5277F00DD59C6 /* Ball.cpp */,
 				B99B5E161AE5277F00DD59C6 /* Ball.h */,
+				B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */,
+				B9D1D5201AE54075004CA315 /* Dinosaur.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -501,6 +511,8 @@
 				B9ACDB851ADEBBF9004C98FD /* EaterState.h */,
 				B9ACDDB71AE3C21E004C98FD /* ElectrodeState.cpp */,
 				B9ACDDB81AE3C21E004C98FD /* ElectrodeState.h */,
+				B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */,
+				B9D1D5241AE5489E004CA315 /* DinosaurState.h */,
 			);
 			path = stateMachine;
 			sourceTree = "<group>";
@@ -664,10 +676,12 @@
 				B9ACDDB91AE3C21E004C98FD /* ElectrodeState.cpp in Sources */,
 				B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F3F1AD6A07100D61398 /* Flower.cpp in Sources */,
+				B9D1D5211AE54075004CA315 /* Dinosaur.cpp in Sources */,
 				B9ACDDCB1AE3E6B3004C98FD /* Bomb.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				B9DF0F491AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
+				B9D1D5251AE5489E004CA315 /* DinosaurState.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				B99B5E171AE5277F00DD59C6 /* Ball.cpp in Sources */,
 				B9ACDDA91AE39386004C98FD /* wall.cpp in Sources */,
@@ -700,9 +714,11 @@
 				B9DF0F581AD80B1F00D61398 /* ZeekState.cpp in Sources */,
 				B99B5E181AE5277F00DD59C6 /* Ball.cpp in Sources */,
 				B9ACDDCC1AE3E6B3004C98FD /* Bomb.cpp in Sources */,
+				B9D1D5221AE54075004CA315 /* Dinosaur.cpp in Sources */,
 				B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */,
 				B9DF0F3E1AD6A07100D61398 /* Eater.cpp in Sources */,
 				B9ACDDB21AE3AD51004C98FD /* Door.cpp in Sources */,
+				B9D1D5261AE5489E004CA315 /* DinosaurState.cpp in Sources */,
 				B9ACDB871ADEBBF9004C98FD /* EaterState.cpp in Sources */,
 				B9ACDDAA1AE39386004C98FD /* wall.cpp in Sources */,
 				B9ACDDBA1AE3C21E004C98FD /* ElectrodeState.cpp in Sources */,

@@ -14,7 +14,7 @@ GameObject::GameObject()
 , m_isDestructible(false)
 , m_tiledGid(tiledGid_begin)
 , m_coord(Vec2::ZERO)
-, m_isMoving(true)
+, m_isMoving(false)
 {
     this->setContentSize(Size::ZERO); //设置一个点用于播放非动画类的动作
 }
@@ -35,7 +35,7 @@ bool GameObject::init(tiledGid gid, Armature *bodyArmature, cocos2d::Vec2 coord)
 
 bool GameObject::move(Enum_Direction dir,GameObject *pusher)
 {
-    if(!m_isMoveable)
+    if(!m_isMoveable || m_isMoving)
         return false;
     
     Vec2 targetVec = m_coord;

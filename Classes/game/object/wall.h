@@ -31,6 +31,8 @@ public:
     
 protected:
     Oil();
+    
+//    virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
 };
 
 #endif /* defined(__zeek__wall__) */

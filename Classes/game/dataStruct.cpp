@@ -8,6 +8,7 @@
 
 #include "dataStruct.h"
 
+
 const char* ZeekAniStr[ZeekAniIndex_end] =
 {
     "zeek_walk_west",
@@ -40,4 +41,24 @@ const char *EaterAniStr[eater_ani_end] =
     "eatBugApple_east",
     "eatBugApple_north",
     "eatBugApple_south"
+};
+
+const char *DinosaurAniStr[DinosaurAniIndexEnd] =
+{
+    "IdleLeft",
+    "IdleDown",
+    "IdleRight",
+    "IdleUp",
+    "MoveLeft",
+    "MoveDown",
+    "MoveRight",
+    "MoveUp"
+};
+
+const Vec2 DirectVector[direction_end]=
+{
+    Vec2(-1,0),
+    Vec2(1,0),
+    Vec2(0,-1),
+    Vec2(0,1)
 };
