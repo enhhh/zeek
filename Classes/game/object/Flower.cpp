@@ -23,7 +23,6 @@ Flower * Flower::create(cocos2d::Vec2 coord, bool poison)
     
     if(ptr && ptr->init(poison?tiledGid_poisonFlower:tiledGid_healthyFlower, nullptr, coord))
     {
-        ptr->m_isPoison = poison;
         ptr->autorelease();
         return ptr;
     }
@@ -35,6 +34,12 @@ bool Flower::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec
 {
     if(!GameObject::init(gid, bodyArmature, coord))
         return false;
+    
+    if(gid == tiledGid_healthyFlower)
+        m_isPoison = false;
+    else
+        m_isPoison = true;
+    
     if(!bodyArmature)
     {
         m_bodyArmature = Armature::create("flower");
@@ -53,7 +58,18 @@ bool Flower::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec
 
 void Flower::switchPoison()
 {
-    m_isPoison = !m_isPoison;
+    if(m_isPoison)
+    {
+        m_isPoison = false;
+        m_tiledGid = tiledGid_healthyFlower;
+        m_bodyArmature->getAnimation()->play("healthFlower");
+    }
+    else
+    {
+        m_isPoison = true;
+        m_tiledGid = tiledGid_poisonFlower;
+        m_bodyArmature->getAnimation()->play("poisonFlower");
+    }
 }
 
 bool Flower::move(Enum_Direction dir,GameObject *pusher)

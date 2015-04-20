@@ -19,6 +19,8 @@ public:
     
     virtual bool move(Enum_Direction dir,GameObject *pusher = nullptr) override;
     
+    void switchPoison();
+    
 protected:
     
     Mushroom();

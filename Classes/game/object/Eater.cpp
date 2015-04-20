@@ -14,9 +14,9 @@ Eater::Eater()
 , m_currentAni(eater_ani_end)
 , m_isPlayingAnimation(false)
 {
-    
+    m_isDestructible = true;
+    m_isMoveable = false;
 }
-
 Eater::~Eater()
 {
     delete m_stateMachine;
@@ -28,7 +28,6 @@ Eater * Eater::create(cocos2d::Vec2 coord,bool state)
     
     if(ptr && ptr->init(state?tiledGid_openEater:tiledGid_closeEater, nullptr, coord))
     {
-        ptr->m_currentState = state;
         ptr->autorelease();
         return ptr;
     }
@@ -40,6 +39,12 @@ bool Eater::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::Vec2
 {
     if(!GameObject::init(gid, bodyArmature, coord))
         return false;
+    
+    if(gid == tiledGid_closeEater)
+        m_currentState = false;
+    else
+        m_currentState = true;
+    
     if(!bodyArmature)
     {
         m_bodyArmature = Armature::create("eater");

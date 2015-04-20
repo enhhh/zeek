@@ -23,4 +23,14 @@ protected:
     
 };
 
+class Oil
+: public GameObject
+{
+public:
+    static Oil *create(Vec2 coord);
+    
+protected:
+    Oil();
+};
+
 #endif /* defined(__zeek__wall__) */

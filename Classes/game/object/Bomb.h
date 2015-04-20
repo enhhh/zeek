@@ -16,9 +16,18 @@ class Bomb
 : public GameObject
 {
 public:
-    Bomb(Vec2 coord);
+    static Bomb* create(Vec2 coord);
     
+    virtual bool move(Enum_Direction dir,GameObject *pusher = nullptr);
     
+protected:
+    Bomb();
     
+    virtual bool init(tiledGid gid,Armature *bodyArmature,Vec2 coord);
+    
+    virtual void update(float delta) override;
+protected:
+    bool m_isDestroying;
+    float m_destroyCountDown;
 };
 #endif /* defined(__zeek__Bomb__) */

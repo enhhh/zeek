@@ -64,8 +64,6 @@ bool Zeek::init(tiledGid gid,Armature *bodyArmature,Vec2 coord)
 
 bool Zeek::move(Enum_Direction dir)
 {
-
-    
     auto endcall = [=](){ m_isMoving = false;};
     
     auto endAction = CallFunc::create(endcall);

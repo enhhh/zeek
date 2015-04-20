@@ -25,6 +25,8 @@ public:
     
     virtual bool onCollided(GameObject *from);
     
+    virtual void onDeath(){}
+    
 public:
     
     bool        m_isMoveable;//物体是否可以移动

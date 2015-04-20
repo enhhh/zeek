@@ -17,6 +17,10 @@
 #include "object/Electrode.h"
 #include "object/Chest.h"
 #include "object/mushroom.h"
+#include "object/magicEgg.h"
+#include "object/Ball.h"
+#include "object/Bomb.h"
+
 #include <stdio.h>
 
 static GameMgr * s_pGameMgr = nullptr;
@@ -153,6 +157,9 @@ void GameMgr::preloadSource()
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/door.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/chest.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/mushroom.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/magicEgg.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/oil.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/bomb.ExportJson");
     m_sourceInited = true;
 }
 
@@ -227,6 +234,18 @@ void GameMgr::initGameObject()
                 case tiledGid_poisonousMushroom:
                     object = Mushroom::create(Vec2(i,j), true);
                     break;
+                case tiledGid_magicEgg:
+                    object = MagicEgg::create(Vec2(i,j));
+                    break;
+                case tiledGid_ball:
+                    object = Ball::create(Vec2(i,j));
+                    break;
+                case tiledGid_oil:
+                    object = Oil::create(Vec2(i, j));
+                    break;
+                case tiledGid_bomb:
+                    object = Bomb::create(Vec2(i,j));
+                    break;
                 default:
                     object = Wall::create(Vec2(i,j));
                     break;
@@ -268,6 +287,7 @@ bool GameMgr::removeGameObjectFromMap(GameObject *obj)
     {
         if(*object == obj)
         {
+            obj->onDeath();
             obj->removeFromParent();
             m_objects.erase(object);
             return true;

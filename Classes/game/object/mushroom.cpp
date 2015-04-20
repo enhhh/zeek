@@ -69,3 +69,19 @@ bool Mushroom::move(Enum_Direction dir,GameObject *pusher)
     GameMgr::getInstance()->removeGameObjectFromMap(this);
     return true;
 }
+
+void Mushroom::switchPoison()
+{
+    if(m_isPoison)
+    {
+        m_isPoison = false;
+        m_tiledGid = tiledGid_healthyMushroom;
+        m_bodyArmature->getAnimation()->play("healthMushroom");
+    }
+    else
+    {
+        m_isPoison = true;
+        m_tiledGid = tiledGid_poisonousMushroom;
+        m_bodyArmature->getAnimation()->play("poisonMushroom");
+    }
+}

@@ -44,6 +44,8 @@ public:
     
     bool removeGameObjectFromMap(Vec2 coord);
     
+    const std::vector<GameObject*> &getAllObject(){return m_objects;}
+    
     //地图相关
     
     Vec2 getPositionWithCoord(Vec2 coord);
