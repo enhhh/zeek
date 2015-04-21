@@ -89,6 +89,12 @@
 		B9D1D5221AE54075004CA315 /* Dinosaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */; };
 		B9D1D5251AE5489E004CA315 /* DinosaurState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */; };
 		B9D1D5261AE5489E004CA315 /* DinosaurState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */; };
+		B9D1D5391AE68C70004CA315 /* CCShakeUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5331AE68C70004CA315 /* CCShakeUIWidget.cpp */; };
+		B9D1D53A1AE68C70004CA315 /* CCShakeUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5331AE68C70004CA315 /* CCShakeUIWidget.cpp */; };
+		B9D1D53B1AE68C70004CA315 /* LevelSelectLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5371AE68C70004CA315 /* LevelSelectLayer.cpp */; };
+		B9D1D53C1AE68C70004CA315 /* LevelSelectLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D1D5371AE68C70004CA315 /* LevelSelectLayer.cpp */; };
+		B9D1D5421AE69F1D004CA315 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = B9D1D5411AE69F1D004CA315 /* ui */; };
+		B9D1D5431AE69F1D004CA315 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = B9D1D5411AE69F1D004CA315 /* ui */; };
 		B9DF0F391AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3A1AD6A07100D61398 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2A1AD6A07100D61398 /* AStar.cpp */; };
 		B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DF0F2F1AD6A07100D61398 /* Eater.cpp */; };
@@ -227,6 +233,11 @@
 		B9D1D5201AE54075004CA315 /* Dinosaur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dinosaur.h; sourceTree = "<group>"; };
 		B9D1D5231AE5489E004CA315 /* DinosaurState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DinosaurState.cpp; sourceTree = "<group>"; };
 		B9D1D5241AE5489E004CA315 /* DinosaurState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DinosaurState.h; sourceTree = "<group>"; };
+		B9D1D5331AE68C70004CA315 /* CCShakeUIWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCShakeUIWidget.cpp; sourceTree = "<group>"; };
+		B9D1D5341AE68C70004CA315 /* CCShakeUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShakeUIWidget.h; sourceTree = "<group>"; };
+		B9D1D5371AE68C70004CA315 /* LevelSelectLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelSelectLayer.cpp; sourceTree = "<group>"; };
+		B9D1D5381AE68C70004CA315 /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
+		B9D1D5411AE69F1D004CA315 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		B9DF0F2A1AD6A07100D61398 /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
 		B9DF0F2B1AD6A07100D61398 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		B9DF0F2F1AD6A07100D61398 /* Eater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eater.cpp; sourceTree = "<group>"; };
@@ -368,6 +379,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9D1D5411AE69F1D004CA315 /* ui */,
 				B9ACDDCD1AE3F3F7004C98FD /* level */,
 				B9E6DF6D1ADD6057005016A1 /* armature */,
 				B98805A31AC7FD6500152750 /* fonts */,
@@ -384,6 +396,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B9D1D5321AE68C70004CA315 /* controls */,
+				B9D1D5351AE68C70004CA315 /* ui */,
 				B9DF0F281AD6A07100D61398 /* game */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
@@ -439,6 +453,32 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		B9D1D5321AE68C70004CA315 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1D5331AE68C70004CA315 /* CCShakeUIWidget.cpp */,
+				B9D1D5341AE68C70004CA315 /* CCShakeUIWidget.h */,
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
+		B9D1D5351AE68C70004CA315 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1D5361AE68C70004CA315 /* mainscene */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		B9D1D5361AE68C70004CA315 /* mainscene */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1D5371AE68C70004CA315 /* LevelSelectLayer.cpp */,
+				B9D1D5381AE68C70004CA315 /* LevelSelectLayer.h */,
+			);
+			path = mainscene;
+			sourceTree = "<group>";
 		};
 		B9DF0F281AD6A07100D61398 /* game */ = {
 			isa = PBXGroup;
@@ -627,6 +667,7 @@
 				B98805A91AC7FD6500152750 /* fonts in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				B9D1D5421AE69F1D004CA315 /* ui in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -650,6 +691,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D1D5431AE69F1D004CA315 /* ui in Resources */,
 				B9ACDDCF1AE3F3F7004C98FD /* level in Resources */,
 				B98805AC1AC7FD6500152750 /* sound in Resources */,
 				B9E6DF6F1ADD6057005016A1 /* armature in Resources */,
@@ -683,6 +725,7 @@
 				B9DF0F3D1AD6A07100D61398 /* Eater.cpp in Sources */,
 				B9D1D5251AE5489E004CA315 /* DinosaurState.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				B9D1D53B1AE68C70004CA315 /* LevelSelectLayer.cpp in Sources */,
 				B99B5E171AE5277F00DD59C6 /* Ball.cpp in Sources */,
 				B9ACDDA91AE39386004C98FD /* wall.cpp in Sources */,
 				B9ACDDB11AE3AD51004C98FD /* Door.cpp in Sources */,
@@ -695,6 +738,7 @@
 				B9ACDB8A1AE22675004C98FD /* Apple.cpp in Sources */,
 				B9ACDDC71AE3E366004C98FD /* Chest.cpp in Sources */,
 				B9DF0F411AD6A07100D61398 /* GameObject.cpp in Sources */,
+				B9D1D5391AE68C70004CA315 /* CCShakeUIWidget.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,9 +748,11 @@
 			files = (
 				B9ACDDD31AE3F8BD004C98FD /* magicEgg.cpp in Sources */,
 				B9ACDB8B1AE22675004C98FD /* Apple.cpp in Sources */,
+				B9D1D53A1AE68C70004CA315 /* CCShakeUIWidget.cpp in Sources */,
 				B9ACDDC41AE3DD43004C98FD /* mushroom.cpp in Sources */,
 				B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
+				B9D1D53C1AE68C70004CA315 /* LevelSelectLayer.cpp in Sources */,
 				B9DF0F461AD6A07100D61398 /* Zeek.cpp in Sources */,
 				B9DF0F401AD6A07100D61398 /* Flower.cpp in Sources */,
 				B9ACDDB61AE3B66E004C98FD /* Electrode.cpp in Sources */,

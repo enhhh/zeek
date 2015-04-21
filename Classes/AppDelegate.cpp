@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "game/GameMgr.h"
-
+#include "ui/mainscene/LevelSelectLayer.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -41,10 +41,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = Scene::create();
     director->runWithScene(scene);
-    GameMgr::getInstance()->setGameScene(scene);    
-    GameMgr::getInstance()->loadGame(15);
+    //GameMgr::getInstance()->setGameScene(scene);
+    //GameMgr::getInstance()->loadGame(15);
     // run
-    
+    scene->addChild(LevelSelectLayer::create());
     return true;
 }
 
