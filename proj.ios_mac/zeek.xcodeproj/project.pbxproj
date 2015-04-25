@@ -47,6 +47,8 @@
 		521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6219F0C34300D177D7 /* Default-667h@2x.png */; };
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		B91AB5711AEA9B1300D547C4 /* Elected.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91AB56F1AEA9B1300D547C4 /* Elected.cpp */; };
+		B91AB5721AEA9B1300D547C4 /* Elected.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91AB56F1AEA9B1300D547C4 /* Elected.cpp */; };
 		B98805A91AC7FD6500152750 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B98805A31AC7FD6500152750 /* fonts */; };
 		B98805AA1AC7FD6500152750 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B98805A31AC7FD6500152750 /* fonts */; };
 		B98805AB1AC7FD6500152750 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = B98805A41AC7FD6500152750 /* sound */; };
@@ -113,6 +115,8 @@
 		B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */; };
 		B9E6DF6E1ADD6057005016A1 /* armature in Resources */ = {isa = PBXBuildFile; fileRef = B9E6DF6D1ADD6057005016A1 /* armature */; };
 		B9E6DF6F1ADD6057005016A1 /* armature in Resources */ = {isa = PBXBuildFile; fileRef = B9E6DF6D1ADD6057005016A1 /* armature */; };
+		B9F21C921AE92C7100E8D1B5 /* levelSelectLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = B9F21C911AE92C7100E8D1B5 /* levelSelectLayer.csb */; };
+		B9F21C931AE92C7100E8D1B5 /* levelSelectLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = B9F21C911AE92C7100E8D1B5 /* levelSelectLayer.csb */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -198,6 +202,8 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		B90D94E61AC7E05600300368 /* preInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preInclude.h; sourceTree = "<group>"; };
+		B91AB56F1AEA9B1300D547C4 /* Elected.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Elected.cpp; sourceTree = "<group>"; };
+		B91AB5701AEA9B1300D547C4 /* Elected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elected.h; sourceTree = "<group>"; };
 		B98805A31AC7FD6500152750 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		B98805A41AC7FD6500152750 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		B98805A51AC7FD6500152750 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sprites.plist; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 		B9DF0F561AD80B1F00D61398 /* ZeekState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeekState.h; sourceTree = "<group>"; };
 		B9E6DF6A1ADD5DCD005016A1 /* dataStruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataStruct.cpp; sourceTree = "<group>"; };
 		B9E6DF6D1ADD6057005016A1 /* armature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = armature; sourceTree = "<group>"; };
+		B9F21C911AE92C7100E8D1B5 /* levelSelectLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = levelSelectLayer.csb; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -379,6 +386,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9F21C911AE92C7100E8D1B5 /* levelSelectLayer.csb */,
 				B9D1D5411AE69F1D004CA315 /* ui */,
 				B9ACDDCD1AE3F3F7004C98FD /* level */,
 				B9E6DF6D1ADD6057005016A1 /* armature */,
@@ -536,6 +544,8 @@
 				B99B5E161AE5277F00DD59C6 /* Ball.h */,
 				B9D1D51F1AE54075004CA315 /* Dinosaur.cpp */,
 				B9D1D5201AE54075004CA315 /* Dinosaur.h */,
+				B91AB56F1AEA9B1300D547C4 /* Elected.cpp */,
+				B91AB5701AEA9B1300D547C4 /* Elected.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -684,6 +694,7 @@
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				B98805AB1AC7FD6500152750 /* sound in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				B9F21C921AE92C7100E8D1B5 /* levelSelectLayer.csb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +707,7 @@
 				B98805AC1AC7FD6500152750 /* sound in Resources */,
 				B9E6DF6F1ADD6057005016A1 /* armature in Resources */,
 				B98805B21AC7FD6500152750 /* test.tmx in Resources */,
+				B9F21C931AE92C7100E8D1B5 /* levelSelectLayer.csb in Resources */,
 				B98805B01AC7FD6500152750 /* sprites.png in Resources */,
 				B98805B41AC7FD6500152750 /* tileset.png in Resources */,
 				B98805AE1AC7FD6500152750 /* sprites.plist in Resources */,
@@ -718,6 +730,7 @@
 				B9ACDDB91AE3C21E004C98FD /* ElectrodeState.cpp in Sources */,
 				B9E6DF6B1ADD5DCD005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F3F1AD6A07100D61398 /* Flower.cpp in Sources */,
+				B91AB5711AEA9B1300D547C4 /* Elected.cpp in Sources */,
 				B9D1D5211AE54075004CA315 /* Dinosaur.cpp in Sources */,
 				B9ACDDCB1AE3E6B3004C98FD /* Bomb.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -750,6 +763,7 @@
 				B9ACDB8B1AE22675004C98FD /* Apple.cpp in Sources */,
 				B9D1D53A1AE68C70004CA315 /* CCShakeUIWidget.cpp in Sources */,
 				B9ACDDC41AE3DD43004C98FD /* mushroom.cpp in Sources */,
+				B91AB5721AEA9B1300D547C4 /* Elected.cpp in Sources */,
 				B9E6DF6C1ADD5E26005016A1 /* dataStruct.cpp in Sources */,
 				B9DF0F4A1AD6A0A300D61398 /* GameMgr.cpp in Sources */,
 				B9D1D53C1AE68C70004CA315 /* LevelSelectLayer.cpp in Sources */,

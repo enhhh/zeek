@@ -60,6 +60,13 @@ void Dinosaur::update(float delta)
         return;
     }
     
+    if(!checkAround())
+    {
+        m_currentState = false;
+       playAnimation(m_currentState, m_currentDirection);
+       return;
+    }
+    
     if(!checkCurrent())
     {
         m_currentState = false;
@@ -150,6 +157,27 @@ bool Dinosaur::checkCurrent()
 
 }
 
+bool Dinosaur::checkAround()
+{
+    GameObject *obj = nullptr;
+    do
+    {
+        obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + Vec2(0,-1));
+        if(!obj || obj->m_tiledGid == tiledGid_zeed)
+            return true;
+        obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + Vec2(0,1));
+        if(!obj || obj->m_tiledGid == tiledGid_zeed)
+            return true;
+        obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + Vec2(1,0));
+        if(!obj || obj->m_tiledGid == tiledGid_zeed)
+            return true;
+        obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + Vec2(-1,0));
+        if(!obj || obj->m_tiledGid == tiledGid_zeed)
+            return true;
+    }while (0);
+    return false;
+}
+
 void Dinosaur::turnLeft()
 {
     switch (m_currentDirection)
@@ -173,8 +201,43 @@ void Dinosaur::turnLeft()
 
 bool Dinosaur::move(Enum_Direction dir,GameObject *pusher)
 {
-    m_isMoveable = true;
-    GameObject::move(dir);
-    m_isMoveable = false;
+    if(m_isMoving)
+        return false;
+    
+    Vec2 targetVec = m_coord;
+    
+    switch (dir) {
+        case Enum_Direction::direction_east:
+            targetVec += Vec2(1, 0);
+            break;
+        case Enum_Direction::direction_west:
+            targetVec += Vec2(-1,0);
+            break;
+        case Enum_Direction::direction_north:
+            targetVec += Vec2(0,-1);
+            break;
+        case Enum_Direction::direction_south:
+            targetVec += Vec2(0,1);
+            break;
+        default:
+            break;
+    }
+    if(targetVec.x < 0
+       || targetVec.y < 0
+       || targetVec.x > GameMgr::getInstance()->getMapSize().width
+       || targetVec.y > GameMgr::getInstance()->getMapSize().height)
+        return false;
+    auto obj = GameMgr::getInstance()->getGameObjectWithCoord(targetVec);
+    if(obj)
+        return false;
+    m_coord = targetVec;
+    m_isMoving = true;
+    
+    auto endcall = [=](){ m_isMoving = false;};
+    this->runAction(Sequence::create(
+                                     MoveTo::create(0.5f, GameMgr::getInstance()->getPositionWithCoord(targetVec))
+                                     , CallFunc::create(endcall), nullptr));
+    
     return true;
+
 }

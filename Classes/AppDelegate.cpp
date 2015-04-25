@@ -30,7 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLViewImpl::create("My Game");
         director->setOpenGLView(glview);
     }
-    glview->setDesignResolutionSize(612, 432, ResolutionPolicy::EXACT_FIT);
+    glview->setDesignResolutionSize(612,432, ResolutionPolicy::NO_BORDER);
 
     // turn on display FPS
     director->setDisplayStats(true);
@@ -41,10 +41,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = Scene::create();
     director->runWithScene(scene);
-    //GameMgr::getInstance()->setGameScene(scene);
-    //GameMgr::getInstance()->loadGame(15);
+    GameMgr::getInstance()->setGameScene(scene);
+    GameMgr::getInstance()->loadGame(14);
     // run
-    scene->addChild(LevelSelectLayer::create());
+    //Layer* levelselectLayer = LevelSelectLayer::create();
+    //levelselectLayer->setScale(0.2f);
+    //scene->addChild(LevelSelectLayer::create());
     return true;
 }
 
