@@ -262,8 +262,8 @@ bool PathFind::AStarSearch(TMXTiledMap* tiledMap, int startX, int startY, int en
             
             TMXLayer* mapLayer = tiledMap->getLayer("ground");
             Sprite* tile = mapLayer->getTileAt(Vec2(tilePoint.x, tilePoint.y));
-            if(tile)
-                tile->setColor(Color3B(255, 0, 0));
+//            if(tile)
+//                tile->setColor(Color3B(255, 0, 0));
             astarPathList.push_front(tilePoint);
             currentNode = currentNode->father;
             astarPathCount++;

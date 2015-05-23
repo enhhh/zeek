@@ -27,10 +27,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("zeek");
         director->setOpenGLView(glview);
     }
-    glview->setDesignResolutionSize(612,432, ResolutionPolicy::NO_BORDER);
+    glview->setDesignResolutionSize(612,432, ResolutionPolicy::FIXED_HEIGHT);
 
     // turn on display FPS
     director->setDisplayStats(true);
@@ -42,7 +42,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto scene = Scene::create();
     director->runWithScene(scene);
     GameMgr::getInstance()->setGameScene(scene);
-    GameMgr::getInstance()->loadGame(14);
+    auto lastLevel = UserDefault::getInstance()->getIntegerForKey("lastLevel",1);
+    GameMgr::getInstance()->loadGame(lastLevel);
     // run
     //Layer* levelselectLayer = LevelSelectLayer::create();
     //levelselectLayer->setScale(0.2f);

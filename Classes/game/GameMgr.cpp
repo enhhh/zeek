@@ -85,6 +85,12 @@ void GameMgr::clearGameScene(bool clearCache)
 void GameMgr::gotoNextLevel()
 {
     clearGameScene(false);
+    auto lastLevel = UserDefault::getInstance()->getIntegerForKey("lastLevel",1);
+    if(lastLevel < m_currentLevel + 1)
+    {
+        lastLevel = m_currentLevel + 1;
+        UserDefault::getInstance()->setIntegerForKey("lastLevel", lastLevel);
+    }
     loadGame(m_currentLevel+1);
 }
 
