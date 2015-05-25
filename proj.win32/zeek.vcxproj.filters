@@ -30,9 +30,6 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\game\AI\stateMachine\ZeekState.cpp">
-      <Filter>src\game\AI\stateMachine</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\game\AI\AStar.cpp">
       <Filter>src\game\AI</Filter>
     </ClCompile>
@@ -41,21 +38,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\game\GameMgr.cpp">
       <Filter>src\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\game\object\Eater.cpp">
-      <Filter>src\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\game\object\Flower.cpp">
-      <Filter>src\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\game\object\GameObject.cpp">
-      <Filter>src\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\game\object\Zeek.cpp">
-      <Filter>src\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp">
-      <Filter>src\game\AI\stateMachine</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\game\object\Apple.cpp">
       <Filter>src\game\object</Filter>
@@ -75,7 +57,19 @@
     <ClCompile Include="..\Classes\game\object\Door.cpp">
       <Filter>src\game\object</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Eater.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Elected.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\game\object\Electrode.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Flower.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\GameObject.cpp">
       <Filter>src\game\object</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\game\object\Key.cpp">
@@ -90,6 +84,21 @@
     <ClCompile Include="..\Classes\game\object\wall.cpp">
       <Filter>src\game\object</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Zeek.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\DinosaurState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\ElectrodeState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\AI\stateMachine\ZeekState.cpp">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -97,15 +106,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\AI\stateMachine\state.h">
-      <Filter>src\game\AI\stateMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h">
-      <Filter>src\game\AI\stateMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\AI\stateMachine\ZeekState.h">
-      <Filter>src\game\AI\stateMachine</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\AI\AStar.h">
       <Filter>src\game\AI</Filter>
@@ -116,23 +116,8 @@
     <ClInclude Include="..\Classes\game\GameMgr.h">
       <Filter>src\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\game\object\Eater.h">
-      <Filter>src\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\object\Flower.h">
-      <Filter>src\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\object\GameObject.h">
-      <Filter>src\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\object\Zeek.h">
-      <Filter>src\game\object</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\preInclude.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h">
-      <Filter>src\game\AI\stateMachine</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\object\Apple.h">
       <Filter>src\game\object</Filter>
@@ -152,7 +137,19 @@
     <ClInclude Include="..\Classes\game\object\Door.h">
       <Filter>src\game\object</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Eater.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Elected.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\game\object\Electrode.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Flower.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\GameObject.h">
       <Filter>src\game\object</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\object\Key.h">
@@ -166,6 +163,27 @@
     </ClInclude>
     <ClInclude Include="..\Classes\game\object\wall.h">
       <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Zeek.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\DinosaurState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\ElectrodeState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\state.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h">
+      <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\AI\stateMachine\ZeekState.h">
+      <Filter>src\game\AI\stateMachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

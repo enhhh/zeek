@@ -141,7 +141,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\game\AI\AStar.cpp" />
+    <ClCompile Include="..\Classes\game\AI\stateMachine\DinosaurState.cpp" />
     <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp" />
+    <ClCompile Include="..\Classes\game\AI\stateMachine\ElectrodeState.cpp" />
     <ClCompile Include="..\Classes\game\AI\stateMachine\ZeekState.cpp" />
     <ClCompile Include="..\Classes\game\dataStruct.cpp" />
     <ClCompile Include="..\Classes\game\GameMgr.cpp" />
@@ -152,6 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\game\object\Dinosaur.cpp" />
     <ClCompile Include="..\Classes\game\object\Door.cpp" />
     <ClCompile Include="..\Classes\game\object\Eater.cpp" />
+    <ClCompile Include="..\Classes\game\object\Elected.cpp" />
     <ClCompile Include="..\Classes\game\object\Electrode.cpp" />
     <ClCompile Include="..\Classes\game\object\Flower.cpp" />
     <ClCompile Include="..\Classes\game\object\GameObject.cpp" />
@@ -165,7 +168,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\game\AI\AStar.h" />
+    <ClInclude Include="..\Classes\game\AI\stateMachine\DinosaurState.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h" />
+    <ClInclude Include="..\Classes\game\AI\stateMachine\ElectrodeState.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\state.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\stateMachine.h" />
     <ClInclude Include="..\Classes\game\AI\stateMachine\ZeekState.h" />
@@ -178,6 +183,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\game\object\Dinosaur.h" />
     <ClInclude Include="..\Classes\game\object\Door.h" />
     <ClInclude Include="..\Classes\game\object\Eater.h" />
+    <ClInclude Include="..\Classes\game\object\Elected.h" />
     <ClInclude Include="..\Classes\game\object\Electrode.h" />
     <ClInclude Include="..\Classes\game\object\Flower.h" />
     <ClInclude Include="..\Classes\game\object\GameObject.h" />
