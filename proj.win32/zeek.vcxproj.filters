@@ -57,6 +57,39 @@
     <ClCompile Include="..\Classes\game\AI\stateMachine\EaterState.cpp">
       <Filter>src\game\AI\stateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Apple.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Ball.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Bomb.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Chest.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Dinosaur.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Door.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Electrode.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\Key.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\magicEgg.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\mushroom.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\object\wall.cpp">
+      <Filter>src\game\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -100,6 +133,39 @@
     </ClInclude>
     <ClInclude Include="..\Classes\game\AI\stateMachine\EaterState.h">
       <Filter>src\game\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Apple.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Ball.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Bomb.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Chest.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Dinosaur.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Door.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Electrode.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\Key.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\magicEgg.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\mushroom.h">
+      <Filter>src\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\object\wall.h">
+      <Filter>src\game\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
