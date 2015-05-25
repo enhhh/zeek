@@ -1,0 +1,180 @@
+<Solution>
+  <PropertyGroup Name="zeekUI" Version="2.2.1.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="levelSelectLayer.csd" Type="Layer" />
+        <Folder Name="ui">
+          <Folder Name="LevelLayer">
+            <Folder Name="levelLock">
+              <Image Name="LevelL_BG.png" />
+              <Image Name="LevelL_BigLock.png" />
+              <Image Name="LevelL_Star.png" />
+            </Folder>
+            <Folder Name="res_Bg2Bird">
+              <Image Name="level2_bird1.png" />
+              <Image Name="level2_bird2.png" />
+              <Image Name="level2_bird3.png" />
+            </Folder>
+            <Folder Name="res_HaiO">
+              <Image Name="1.png" />
+              <Image Name="10.png" />
+              <Image Name="11.png" />
+              <Image Name="12.png" />
+              <Image Name="13.png" />
+              <Image Name="14.png" />
+              <Image Name="15.png" />
+              <Image Name="16.png" />
+              <Image Name="17.png" />
+              <Image Name="18.png" />
+              <Image Name="19.png" />
+              <Image Name="2.png" />
+              <Image Name="3.png" />
+              <Image Name="4.png" />
+              <Image Name="5.png" />
+              <Image Name="6.png" />
+              <Image Name="7.png" />
+              <Image Name="8.png" />
+              <Image Name="9.png" />
+            </Folder>
+            <Folder Name="res_JinYu">
+              <Image Name="FISH.png" />
+              <Image Name="FISH1.png" />
+              <Image Name="FISH2.png" />
+              <Image Name="s1.png" />
+              <Image Name="s2.png" />
+              <Image Name="s3.png" />
+              <Image Name="s4.png" />
+              <Image Name="s5.png" />
+              <Image Name="s6.png" />
+              <Image Name="w1.png" />
+            </Folder>
+            <Image Name="Level_BG.png" />
+            <Image Name="Level_BG_BaiTiao.png" />
+            <Image Name="Level_BG_Water.png" />
+            <Image Name="Level_BtnFri_Show.png" />
+            <Image Name="Level_BtnMain_Down.png" />
+            <Image Name="Level_BtnMain_On.png" />
+            <Image Name="Level_BtnMain_Show.png" />
+            <Image Name="Level_BtnShareBG.png" />
+            <Image Name="Level_BtnShareChat.png" />
+            <Image Name="Level_BtnShareQQ.png" />
+            <Image Name="Level_BtnShareSina.png" />
+            <Image Name="Level_Cloud1.png" />
+            <Image Name="Level_Cloud2.png" />
+            <Image Name="Level_Cloud3.png" />
+            <Image Name="Level_Cloud4.png" />
+            <Image Name="Level_ComeingSoon.png" />
+            <Image Name="Level_CurPageDot.png" />
+            <Image Name="Level_LBG1.png" />
+            <Image Name="Level_LBG2.png" />
+            <Image Name="Level_LBG3.png" />
+            <Image Name="Level_LBG4.png" />
+            <Image Name="Level_LBG5.png" />
+            <Image Name="Level_Left.png" />
+            <Image Name="Level_LeftGray.png" />
+            <Image Name="Level_NumLine.png" />
+            <Image Name="Level_PageDot.png" />
+            <Image Name="Level_Star.png" />
+            <Image Name="Skip_BG.png" />
+            <Image Name="Skip_BtnClose.png" />
+            <Image Name="Skip_BtnFish1.png" />
+            <Image Name="Skip_BtnFish2.png" />
+            <Image Name="Skip_BtnFish3.png" />
+            <Image Name="Skip_BtnStar.png" />
+            <Image Name="Skip_BtnStarBg.png" />
+            <Image Name="Skip_BtnW.png" />
+            <Image Name="Skip_BtnY.png" />
+            <Image Name="Skip_Lock.png" />
+            <Image Name="Skip_lollipop.png" />
+            <Folder Name="ui">
+              <Folder Name="LevelLayer">
+                <Folder Name="levelLock">
+                  <Image Name="LevelL_BG.png" />
+                  <Image Name="LevelL_BigLock.png" />
+                  <Image Name="LevelL_Star.png" />
+                </Folder>
+                <Folder Name="res_Bg2Bird">
+                  <Image Name="level2_bird1.png" />
+                  <Image Name="level2_bird2.png" />
+                  <Image Name="level2_bird3.png" />
+                </Folder>
+                <Folder Name="res_HaiO">
+                  <Image Name="1.png" />
+                  <Image Name="10.png" />
+                  <Image Name="11.png" />
+                  <Image Name="12.png" />
+                  <Image Name="13.png" />
+                  <Image Name="14.png" />
+                  <Image Name="15.png" />
+                  <Image Name="16.png" />
+                  <Image Name="17.png" />
+                  <Image Name="18.png" />
+                  <Image Name="19.png" />
+                  <Image Name="2.png" />
+                  <Image Name="3.png" />
+                  <Image Name="4.png" />
+                  <Image Name="5.png" />
+                  <Image Name="6.png" />
+                  <Image Name="7.png" />
+                  <Image Name="8.png" />
+                  <Image Name="9.png" />
+                </Folder>
+                <Folder Name="res_JinYu">
+                  <Image Name="FISH.png" />
+                  <Image Name="FISH1.png" />
+                  <Image Name="FISH2.png" />
+                  <Image Name="s1.png" />
+                  <Image Name="s2.png" />
+                  <Image Name="s3.png" />
+                  <Image Name="s4.png" />
+                  <Image Name="s5.png" />
+                  <Image Name="s6.png" />
+                  <Image Name="w1.png" />
+                </Folder>
+                <Image Name="Level_BG.png" />
+                <Image Name="Level_BG_BaiTiao.png" />
+                <Image Name="Level_BG_Water.png" />
+                <Image Name="Level_BtnFri_Show.png" />
+                <Image Name="Level_BtnMain_Down.png" />
+                <Image Name="Level_BtnMain_On.png" />
+                <Image Name="Level_BtnMain_Show.png" />
+                <Image Name="Level_BtnShareBG.png" />
+                <Image Name="Level_BtnShareChat.png" />
+                <Image Name="Level_BtnShareQQ.png" />
+                <Image Name="Level_BtnShareSina.png" />
+                <Image Name="Level_Cloud1.png" />
+                <Image Name="Level_Cloud2.png" />
+                <Image Name="Level_Cloud3.png" />
+                <Image Name="Level_Cloud4.png" />
+                <Image Name="Level_ComeingSoon.png" />
+                <Image Name="Level_CurPageDot.png" />
+                <Image Name="Level_LBG1.png" />
+                <Image Name="Level_LBG2.png" />
+                <Image Name="Level_LBG3.png" />
+                <Image Name="Level_LBG4.png" />
+                <Image Name="Level_LBG5.png" />
+                <Image Name="Level_Left.png" />
+                <Image Name="Level_LeftGray.png" />
+                <Image Name="Level_NumLine.png" />
+                <Image Name="Level_PageDot.png" />
+                <Image Name="Level_Star.png" />
+                <Image Name="Skip_BG.png" />
+                <Image Name="Skip_BtnClose.png" />
+                <Image Name="Skip_BtnFish1.png" />
+                <Image Name="Skip_BtnFish2.png" />
+                <Image Name="Skip_BtnFish3.png" />
+                <Image Name="Skip_BtnStar.png" />
+                <Image Name="Skip_BtnStarBg.png" />
+                <Image Name="Skip_BtnW.png" />
+                <Image Name="Skip_BtnY.png" />
+                <Image Name="Skip_Lock.png" />
+                <Image Name="Skip_lollipop.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

@@ -33,6 +33,7 @@ protected:
     
     virtual bool move(Enum_Direction dir,GameObject *pusher = nullptr);
     
+    bool checkAround();
 protected:
     
     Enum_Direction m_currentDirection;

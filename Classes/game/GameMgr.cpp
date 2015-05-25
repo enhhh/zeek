@@ -21,6 +21,7 @@
 #include "object/Ball.h"
 #include "object/Bomb.h"
 #include "object/Dinosaur.h"
+#include "object/Elected.h"
 #include <stdio.h>
 
 static GameMgr * s_pGameMgr = nullptr;
@@ -84,6 +85,12 @@ void GameMgr::clearGameScene(bool clearCache)
 void GameMgr::gotoNextLevel()
 {
     clearGameScene(false);
+    auto lastLevel = UserDefault::getInstance()->getIntegerForKey("lastLevel",1);
+    if(lastLevel < m_currentLevel + 1)
+    {
+        lastLevel = m_currentLevel + 1;
+        UserDefault::getInstance()->setIntegerForKey("lastLevel", lastLevel);
+    }
     loadGame(m_currentLevel+1);
 }
 
@@ -161,6 +168,7 @@ void GameMgr::preloadSource()
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/oil.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/bomb.ExportJson");
     ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/dinosaur.ExportJson");
+    ArmatureDataManager::getInstance()->addArmatureFileInfo("armature/elected.ExportJson");
     m_sourceInited = true;
 }
 
@@ -249,6 +257,9 @@ void GameMgr::initGameObject()
                     break;
                 case tiledGid_dinosaur:
                     object = Dinosaur::create(Vec2(i,j));
+                    break;
+                case tiledGid_elected:
+                    object = Elected::create(Vec2(i,j));
                     break;
                 default:
                     object = Wall::create(Vec2(i,j));
