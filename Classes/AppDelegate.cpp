@@ -27,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("zeek");
+        glview = GLViewImpl::createWithRect("zeek", Rect(0,0,960,640));
         director->setOpenGLView(glview);
     }
     glview->setDesignResolutionSize(612,432, ResolutionPolicy::FIXED_HEIGHT);
@@ -44,6 +44,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     GameMgr::getInstance()->setGameScene(scene);
     auto lastLevel = UserDefault::getInstance()->getIntegerForKey("lastLevel",1);
     GameMgr::getInstance()->loadGame(lastLevel);
+    auto node = CSLoader::getInstance()->createNode("GameSceneUI.csb");
+    cocos2d::ui::Button* btn = (cocos2d::ui::Button*)node->getChildByName("restartBtn");
+    btn->addTouchEventListener([](Ref*,cocos2d::ui::Widget::TouchEventType eventType){
+        if(eventType == cocos2d::ui::Widget::TouchEventType::ENDED)
+        {
+            GameMgr::getInstance()->restartCurrentLevel();
+        }
+    });
+    scene->addChild(node,100);
     // run
     //Layer* levelselectLayer = LevelSelectLayer::create();
     //levelselectLayer->setScale(0.2f);

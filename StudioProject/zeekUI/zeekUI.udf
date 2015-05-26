@@ -11,9 +11,10 @@
         <iOS_Target Value="zeekUI iOS" />
         <iOS_BundleID Value="" />
         <Platform Value="Android" />
-        <PublishSetting Value="Resource" />
         <FrameworkVersion Value="cocos2d-x-3.4" />
         <IsDebugKeystore Value="True" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
     <Item Key="TabsParamsKey">
@@ -22,6 +23,13 @@
           <FilePathData Path="levelSelectLayer.csd" />
         </OpenedDocuments>
         <ActiveDocument Path="levelSelectLayer.csd" />
+      </Value>
+    </Item>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Unknown" />
       </Value>
     </Item>
   </Properties>

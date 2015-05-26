@@ -7,7 +7,7 @@
 //
 
 #include "LevelSelectLayer.h"
-
+#include "GameMgr.h"
 LevelSelectLayer * LevelSelectLayer::create()
 {
     auto ptr = new LevelSelectLayer();
@@ -24,7 +24,8 @@ bool LevelSelectLayer::init()
 {
     if(!Layer::init())
         return false;
-    auto node = CSLoader::getInstance()->createNode("levelSelectLayer.csb");
+    auto node = CSLoader::getInstance()->createNode("GameSceneUI.csb");
+
     this->addChild(node);
        return true;
 }
