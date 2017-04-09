@@ -31,6 +31,12 @@ protected:
     
     void turnLeft();
     
+    void turnRight();
+    
+    void turnBack();
+    
+    void turnDirection();
+    
     virtual bool move(Enum_Direction dir,GameObject *pusher = nullptr);
     
     bool checkAround();

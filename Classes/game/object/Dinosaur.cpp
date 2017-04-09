@@ -54,33 +54,39 @@ bool Dinosaur::init(tiledGid gid, cocostudio::Armature *bodyArmature, cocos2d::V
 
 void Dinosaur::update(float delta)
 {
-    if(m_restCountDown > 0)
+    auto oldState = m_currentState;
+    auto oldDirection = m_currentDirection;
+    do
     {
-        m_restCountDown -= delta;
-        return;
-    }
-    
-    if(!checkAround())
+        if(m_restCountDown > 0)
+        {
+            m_restCountDown -= delta;
+            break;
+        }
+        
+        if(!checkAround())
+        {
+            m_currentState = false;
+            break;
+        }
+        
+        if(!checkCurrent())
+        {
+            m_currentState = false;
+            if(!m_readyKillPlayer)
+                turnDirection();
+            return;
+        }
+        else
+        {
+            m_currentState = true;
+            move(m_currentDirection);
+        }
+    }while(0);
+    if (oldState != m_currentState || oldDirection != m_currentDirection)
     {
-        m_currentState = false;
-       playAnimation(m_currentState, m_currentDirection);
-       return;
-    }
-    
-    if(!checkCurrent())
-    {
-        m_currentState = false;
         playAnimation(m_currentState, m_currentDirection);
-        if(!m_readyKillPlayer)
-        turnLeft();
     }
-    else
-    {
-        m_currentState = true;
-        playAnimation(m_currentState, m_currentDirection);
-        move(m_currentDirection);
-    }
-    
 }
 
 void Dinosaur::playAnimation(bool state, Enum_Direction dir)
@@ -147,8 +153,8 @@ bool Dinosaur::checkCurrent()
             return true;
         }
         
-            m_restCountDown = NORMAL_REST_TIME;
-            m_readyKillPlayer = nullptr;
+        m_restCountDown = NORMAL_REST_TIME;
+        m_readyKillPlayer = nullptr;
         return false;
     }
     
@@ -178,6 +184,25 @@ bool Dinosaur::checkAround()
     return false;
 }
 
+void Dinosaur::turnDirection()
+{
+    auto left = DirectVector[m_currentDirection].rotateByAngle(Vec2::ZERO, -M_PI_2);
+    auto obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + left);
+    if(!obj || obj->m_isDestructible)
+    {
+        turnLeft();
+        return;
+    }
+    auto right = DirectVector[m_currentDirection].rotateByAngle(Vec2::ZERO, M_PI_2);
+    obj = GameMgr::getInstance()->getGameObjectWithCoord(m_coord + right);
+    if (!obj || obj->m_isDestructible)
+    {
+        turnRight();
+        return;
+    }
+    turnBack();
+}
+
 void Dinosaur::turnLeft()
 {
     switch (m_currentDirection)
@@ -193,6 +218,49 @@ void Dinosaur::turnLeft()
             break;
         case direction_north:
             m_currentDirection = direction_west;
+            break;
+        default:
+            break;
+    }
+}
+
+void Dinosaur::turnRight()
+{
+    switch (m_currentDirection)
+    {
+        case direction_west:
+            m_currentDirection = direction_north;
+            break;
+        case direction_south:
+            m_currentDirection = direction_west;
+            break;
+        case direction_east:
+            m_currentDirection = direction_south;
+            break;
+        case direction_north:
+            m_currentDirection = direction_east;
+            break;
+        default:
+            break;
+    }
+    
+}
+
+void Dinosaur::turnBack()
+{
+    switch (m_currentDirection)
+    {
+        case direction_west:
+            m_currentDirection = direction_east;
+            break;
+        case direction_south:
+            m_currentDirection = direction_north;
+            break;
+        case direction_east:
+            m_currentDirection = direction_west;
+            break;
+        case direction_north:
+            m_currentDirection = direction_south;
             break;
         default:
             break;

@@ -284,7 +284,7 @@ GameObject* GameMgr::getGameObjectWithCoord(cocos2d::Vec2 coord)
 {
     for(auto object : m_objects)
     {
-        if(object->m_coord == coord)
+        if(object->m_coord.distance(coord) < 0.01)
             return object;
     }
     
